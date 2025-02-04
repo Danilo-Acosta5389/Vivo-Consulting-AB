@@ -26,4 +26,4 @@ jobs:
           cd /var/www//Vivo-Consulting-AB/
           git pull origin main
           git status
-          npm install --only=prod
+          pnpm install
