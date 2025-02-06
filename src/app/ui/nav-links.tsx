@@ -17,7 +17,7 @@ function NavLinks({
     {
       name: "Om oss",
       description: "Get a better understanding of your traffic",
-      href: "#Om",
+      href: "#about",
     },
     {
       name: "Referenser",
