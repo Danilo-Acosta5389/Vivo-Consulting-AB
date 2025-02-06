@@ -4,9 +4,7 @@ import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import clsx from "clsx";
 import NavLinks from "./nav-links";
-import { link } from "fs";
 
 const links = [
   {

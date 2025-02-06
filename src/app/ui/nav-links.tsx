@@ -1,9 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import { JSX, useState } from "react";
+import { JSX } from "react";
 
 import { Dispatch, SetStateAction } from "react";
 
