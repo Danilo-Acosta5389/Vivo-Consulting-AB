@@ -10,7 +10,7 @@ const links = [
   {
     name: "Om oss",
     description: "Get a better understanding of your traffic",
-    href: "#",
+    href: "#about",
   },
   {
     name: "Referenser",
@@ -47,9 +47,9 @@ export default function Example() {
           <NavLinks activeLink={linkName} setActiveLink={setLinkName} />
         </div>
         <div className="flex lg:flex-1">
-          <Link href="#" className="-m-1.5 p-1.5">
+          <div className="-m-1.5 p-1.5">
             <span className=" sr-only">PLACEHOLDER</span>
-          </Link>
+          </div>
         </div>
         <div className="flex sm:hidden">
           <button
