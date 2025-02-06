@@ -11,14 +11,14 @@ function Hero() {
         alt="Image of healthcare people"
         className=""
       />
-      <div className="z-10 absolute text-white text-center">
-        <h1 className="text-3xl font-semibold mb-5">
+      <div className="px-2 z-10 absolute text-white text-center w-screen flex flex-col items-center justify-center">
+        <h1 className="sm:text-3xl text-2xl font-semibold mb-5">
           Trygg och flexibel bemanning inom vården
         </h1>
-        <p className="text-lg font-semibold max-w-4xl mb-5">
+        <p className="sm:text-lg font-semibold max-w-screen-sm mb-5">
           En erfaren specialistsjuksköterska som erbjuder trygg och flexibel
-          bemanning direkt till verksamheter eller via bemanningsföretag –
-          alltid med fokus på kontinuitet, kvalitet och patientens bästa.
+          bemanning direkt till verksamheter eller via bemanningsföretag alltid
+          med fokus på kontinuitet, kvalitet och patientens bästa.
         </p>
         <Button className=" bg-teal-600 hover:bg-teal-700">Kontakta oss</Button>
       </div>
