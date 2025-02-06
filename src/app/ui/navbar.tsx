@@ -4,6 +4,9 @@ import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import clsx from "clsx";
+import NavLinks from "./nav-links";
+import { link } from "fs";
 
 const links = [
   {
@@ -25,28 +28,25 @@ const links = [
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [linkName, setLinkName] = useState("");
 
   return (
-    <header className="bg-white">
+    <header className="bg-white border-b border-gray-300 max-h-[73]">
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center sm:justify-between justify-between p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <Link href="#" className="-m-1.5 p-1.5">
+          <Link
+            href="#"
+            className="-m-1.5 p-1.5"
+            onClick={() => setLinkName("")}
+          >
             <span className="">LOGO</span>
           </Link>
         </div>
         <div className="hidden sm:flex sm:gap-x-12">
-          {links.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-sm/6 font-semibold text-gray-900"
-            >
-              {link.name}
-            </Link>
-          ))}
+          <NavLinks activeLink={linkName} setActiveLink={setLinkName} />
         </div>
         <div className="flex lg:flex-1">
           <Link href="#" className="-m-1.5 p-1.5">
@@ -72,9 +72,13 @@ export default function Example() {
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-            </a>
+            <Link
+              href="#"
+              className="-m-1.5 p-1.5"
+              onClick={() => setLinkName("")}
+            >
+              <span className="">LOGO</span>
+            </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
@@ -91,6 +95,7 @@ export default function Example() {
                   <Link
                     key={link.name}
                     href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                   >
                     {link.name}
