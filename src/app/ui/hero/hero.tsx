@@ -16,7 +16,7 @@ function Hero() {
           Trygg och flexibel bemanning inom vården
         </h1>
         <p className="sm:text-xl text-lg font-bold max-w-screen-sm mb-5">
-          En erfaren specialistsjuksköterska som erbjuder trygg och flexibel
+          Erfaren specialistsjuksköterska som erbjuder trygg och flexibel
           bemanning direkt till verksamheter eller via bemanningsföretag alltid
           med fokus på kontinuitet, kvalitet och patientens bästa.
         </p>
