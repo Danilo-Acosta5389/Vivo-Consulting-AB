@@ -3,13 +3,13 @@ import Image from "next/image";
 
 function Hero() {
   return (
-    <div className=" overflow-hidden bg-slate-500 flex flex-col items-center justify-center relative">
+    <div className=" overflow-hidden bg-slate-500 flex flex-col items-center justify-center relative max-h-[25rem]">
       <Image
-        className="max-w-fit opacity-70"
         width={1920}
         height={1080}
         src="/hero2.jpg"
         alt="Image of healthcare people"
+        className="max-w-fit opacity-70"
       />
       <div className="drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] w-full px-4 z-10 absolute text-white text-center flex flex-col items-center justify-center">
         <h1 className=" sm:text-4xl text-3xl font-bold mb-5">

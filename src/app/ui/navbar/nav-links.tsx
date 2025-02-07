@@ -3,34 +3,19 @@
 import Link from "next/link";
 import clsx from "clsx";
 import { JSX } from "react";
+import Links from "./types";
 
 import { Dispatch, SetStateAction } from "react";
 
 function NavLinks({
   activeLink,
   setActiveLink,
+  links,
 }: {
   activeLink: string;
   setActiveLink: Dispatch<SetStateAction<string>>;
+  links: Links[];
 }): JSX.Element {
-  const links = [
-    {
-      name: "Om oss",
-      description: "Get a better understanding of your traffic",
-      href: "#about",
-    },
-    {
-      name: "Referenser",
-      description: "Speak directly to your customers",
-      href: "#Referenser",
-    },
-    {
-      name: "Kontakt",
-      description: "Your customers’ data will be safe and secure",
-      href: "#Kontakt",
-    },
-  ];
-
   return (
     <>
       {links.map((link) => {
