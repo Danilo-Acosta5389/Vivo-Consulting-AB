@@ -1,6 +1,8 @@
-import Navbar from "./ui/navbar";
+import Navbar from "./ui/navbar/navbar";
 import Hero from "./ui/hero/hero";
 import About from "./ui/about/about";
+import References from "./ui/reference/reference";
+import Contact from "./ui/contact/contact";
 
 export default function Home() {
   return (
@@ -10,6 +12,8 @@ export default function Home() {
         <div className=" w-full max-w-7xl bg-slate-200">
           <Hero />
           <About />
+          <References />
+          <Contact />
         </div>
       </main>
     </>

@@ -5,8 +5,9 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import NavLinks from "./nav-links";
+import Links from "./types";
 
-const links = [
+const links: Links[] = [
   {
     name: "Om oss",
     description: "Get a better understanding of your traffic",
@@ -15,12 +16,12 @@ const links = [
   {
     name: "Referenser",
     description: "Speak directly to your customers",
-    href: "#",
+    href: "#references",
   },
   {
     name: "Kontakt",
     description: "Your customers’ data will be safe and secure",
-    href: "#",
+    href: "#contact",
   },
 ];
 
@@ -29,14 +30,14 @@ export default function Example() {
   const [linkName, setLinkName] = useState("");
 
   return (
-    <header className="bg-white border-b border-gray-300 max-h-[73]">
+    <header className="bg-white border-b border-gray-300 max-h-[73] sticky top-0 z-20">
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center sm:justify-between justify-between p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
           <Link
-            href="#"
+            href="#home"
             className="-m-1.5 p-1.5"
             onClick={() => setLinkName("")}
           >
@@ -44,7 +45,11 @@ export default function Example() {
           </Link>
         </div>
         <div className="hidden sm:flex sm:gap-x-12">
-          <NavLinks activeLink={linkName} setActiveLink={setLinkName} />
+          <NavLinks
+            activeLink={linkName}
+            setActiveLink={setLinkName}
+            links={links}
+          />
         </div>
         <div className="flex lg:flex-1">
           <div className="-m-1.5 p-1.5">
@@ -68,10 +73,10 @@ export default function Example() {
         className="lg:hidden"
       >
         <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <DialogPanel className="fixed inset-y-0 right-0 z-20 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link
-              href="#"
+              href="#home"
               className="-m-1.5 p-1.5"
               onClick={() => setLinkName("")}
             >
