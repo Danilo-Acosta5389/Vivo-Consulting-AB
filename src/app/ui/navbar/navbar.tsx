@@ -78,7 +78,10 @@ export default function Example() {
             <Link
               href="#home"
               className="-m-1.5 p-1.5"
-              onClick={() => setLinkName("")}
+              onClick={() => {
+                setLinkName("");
+                setMobileMenuOpen(false);
+              }}
             >
               <span className="">LOGO</span>
             </Link>
