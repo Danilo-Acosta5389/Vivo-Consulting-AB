@@ -1,7 +1,6 @@
 import Navbar from "./ui/navbar";
 import Hero from "./ui/hero/hero";
 import About from "./ui/about/about";
-import Image from "next/image";
 
 export default function Home() {
   return (
