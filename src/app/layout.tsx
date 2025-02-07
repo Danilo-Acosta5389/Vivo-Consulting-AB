@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="sv">
-      <body className="w-full h-full">{children}</body>
+      <body className="w-full h-full flex flex-col">{children}</body>
     </html>
   );
 }
