@@ -4,7 +4,7 @@ import About from "./ui/about/about";
 import References from "./ui/reference/reference";
 import Contact from "./ui/contact/contact";
 import Competence from "./ui/competence/competence";
-//test
+
 export default function Home() {
   return (
     <>
