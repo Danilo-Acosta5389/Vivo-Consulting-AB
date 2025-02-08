@@ -19,7 +19,7 @@ function Competence() {
     "Vigor",
   ];
   return (
-    <section className="max-w-7xl flex flex-col items-center justify-center bg-slate-50 py-8">
+    <section className="max-w-7xl flex flex-col items-center justify-center bg-slate-100 py-8">
       <div className=" flex flex-col items-center justify-center">
         <p className=" border border-black rounded-md p-2 px-4 mb-5 text-xl">
           Kompetenser
@@ -49,10 +49,10 @@ function Competence() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="sm:hidden flex items-center justify-between w-full absolute top-[25] pointer-events-none z-0">
+        {/* <div className="sm:hidden flex items-center justify-between w-full absolute top-[25] pointer-events-none z-0">
           <CarouselPrevious className="static z-50 pointer-events-auto" />
           <CarouselNext className="static z-50 pointer-events-auto" />
-        </div>
+        </div> */}
         <CarouselPrevious className="hidden sm:flex" />
         <CarouselNext className="hidden sm:flex" />
       </Carousel>
