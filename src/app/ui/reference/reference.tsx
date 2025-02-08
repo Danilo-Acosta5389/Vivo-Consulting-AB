@@ -1,8 +1,8 @@
 function References() {
   return (
-    <div id="references" className=" h-screen">
+    <section id="references" className=" h-screen">
       References
-    </div>
+    </section>
   );
 }
 

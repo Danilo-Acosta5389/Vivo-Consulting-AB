@@ -4,7 +4,7 @@ import Link from "next/link";
 
 function Hero() {
   return (
-    <div className=" overflow-hidden bg-slate-500 flex flex-col items-center justify-center relative max-h-[25rem]">
+    <section className=" overflow-hidden bg-slate-500 flex flex-col items-center justify-center relative max-h-[25rem]">
       <Image
         width={1920}
         height={1080}
@@ -21,11 +21,11 @@ function Hero() {
           bemanning direkt till verksamheter eller via bemanningsföretag alltid
           med fokus på kontinuitet, kvalitet och patientens bästa.
         </p>
-        <Button className=" bg-teal-600 hover:bg-teal-700">
+        <Button size={"lg"} className=" text-xl bg-teal-600 hover:bg-teal-700">
           <Link href={"#contact"}>Kontakta oss</Link>
         </Button>
       </div>
-    </div>
+    </section>
   );
 }
 export default Hero;
