@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 function Hero() {
   return (
@@ -20,7 +21,9 @@ function Hero() {
           bemanning direkt till verksamheter eller via bemanningsföretag alltid
           med fokus på kontinuitet, kvalitet och patientens bästa.
         </p>
-        <Button className=" bg-teal-600 hover:bg-teal-700">Kontakta oss</Button>
+        <Button className=" bg-teal-600 hover:bg-teal-700">
+          <Link href={"#contact"}>Kontakta oss</Link>
+        </Button>
       </div>
     </div>
   );
