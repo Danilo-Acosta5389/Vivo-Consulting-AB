@@ -5,6 +5,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { InfiniteMovingLogos } from "./infinite-moving-logos";
+import * as motion from "motion/react-client";
 
 function References() {
   const clients = [
@@ -71,50 +72,78 @@ function References() {
           Vad våra kunder tycker
         </p>
         <div className=" flex flex-col items-start justify-evenly space-y-12 md:space-y-0 md:grid md:grid-cols-8 md:grid-rows-2 md:gap-x-20 md:gap-y-10 my-20 text-lg">
-          {/* {reviews.map((rev, index) => (
-            <Card
-              key={index}
-              className={`p-5 ${
-                index === 0 || index === 1 ? "col-span-4" : "col-span-2"
-              }`}
-            >
-              <CardContent className=" p-0 mb-5">{rev.qoute}</CardContent>
-              <CardTitle>{rev.name}</CardTitle>
-              <CardDescription>{rev.position}</CardDescription>
+          <motion.div
+            transition={{ duration: 1 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            className="self-start md:col-span-4 "
+          >
+            <Card className="p-5 sm:w-[300px] sm:max-w-full max-w-[290px] md:w-fit h-[180px] flex flex-col justify-between bg-gradient-to-t from-teal-500 to-teal-100 shadow-gray-200 text-black">
+              <CardContent className=" p-0 mb-5">
+                {reviews[0].qoute}
+              </CardContent>
+              <div>
+                <CardTitle>{reviews[0].name}</CardTitle>
+                <CardDescription className="text-slate-800">
+                  {reviews[0].position}
+                </CardDescription>
+              </div>
             </Card>
-          ))} */}
-          <Card className="p-5 self-start md:col-span-4 sm:w-[300px] sm:max-w-full max-w-[290px] md:w-fit h-[180px] flex flex-col justify-between bg-teal-400 shadow-gray-200 text-black">
-            <CardContent className=" p-0 mb-5">{reviews[0].qoute}</CardContent>
-            <div>
-              <CardTitle>{reviews[0].name}</CardTitle>
+          </motion.div>
+          <motion.div
+            transition={{ duration: 1, delay: 0.3 }}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            className="md:col-span-4"
+          >
+            <Card className="p-5 sm:w-[370px] sm:max-w-full max-w-[350px] self-end md:self-start md:w-fit md:h-[152px] flex flex-col justify-between bg-gradient-to-bl from-teal-500 to-teal-100 shadow-gray-200">
+              <CardContent className=" p-0 mb-5">
+                {reviews[1].qoute}
+              </CardContent>
+              <div>
+                <CardTitle>{reviews[1].name}</CardTitle>
+                <CardDescription className="text-slate-800">
+                  {reviews[1].position}
+                </CardDescription>
+              </div>
+            </Card>
+          </motion.div>
+          <motion.div
+            transition={{ duration: 1, delay: 0.5 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            className="self-center md:col-span-3"
+          >
+            <Card className="p-5 flex flex-col justify-between bg-gradient-to-br from-teal-500 to-teal-100 shadow-gray-200">
+              <CardContent className=" p-0 mb-5">
+                {reviews[2].qoute}
+              </CardContent>
+              <CardTitle>{reviews[2].name}</CardTitle>
               <CardDescription className="text-slate-800">
-                {reviews[0].position}
+                {reviews[2].position}
               </CardDescription>
-            </div>
-          </Card>
-          <Card className="p-5 sm:w-[370px] sm:max-w-full max-w-[350px] self-end md:self-start md:w-fit md:col-span-4 md:h-[152px] flex flex-col justify-between bg-teal-400 shadow-gray-200">
-            <CardContent className=" p-0 mb-5">{reviews[1].qoute}</CardContent>
-            <div>
-              <CardTitle>{reviews[1].name}</CardTitle>
+            </Card>
+          </motion.div>
+          <motion.div
+            transition={{ duration: 1, delay: 0.4 }}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            className="md:col-span-3 md:col-start-5"
+          >
+            <Card className="p-5 flex flex-col justify-between bg-gradient-to-tl from-teal-500 to-teal-100 shadow-gray-200">
+              <CardContent className=" p-0 mb-5">
+                {reviews[3].qoute}
+              </CardContent>
+              <CardTitle>{reviews[3].name}</CardTitle>
               <CardDescription className="text-slate-800">
-                {reviews[1].position}
+                {reviews[3].position}
               </CardDescription>
-            </div>
-          </Card>
-          <Card className="p-5 self-center md:col-span-3 flex flex-col justify-between bg-teal-400 shadow-gray-200">
-            <CardContent className=" p-0 mb-5">{reviews[2].qoute}</CardContent>
-            <CardTitle>{reviews[2].name}</CardTitle>
-            <CardDescription className="text-slate-800">
-              {reviews[2].position}
-            </CardDescription>
-          </Card>
-          <Card className="p-5 md:col-span-3 md:col-start-5 flex flex-col justify-between bg-teal-400 shadow-gray-200">
-            <CardContent className=" p-0 mb-5">{reviews[3].qoute}</CardContent>
-            <CardTitle>{reviews[3].name}</CardTitle>
-            <CardDescription className="text-slate-800">
-              {reviews[3].position}
-            </CardDescription>
-          </Card>
+            </Card>
+          </motion.div>
         </div>
         <InfiniteMovingLogos
           items={clients}
