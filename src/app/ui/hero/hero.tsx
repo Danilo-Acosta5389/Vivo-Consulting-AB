@@ -21,9 +21,14 @@ function Hero() {
           bemanning direkt till verksamheter eller via bemanningsföretag alltid
           med fokus på kontinuitet, kvalitet och patientens bästa.
         </p>
-        <Button size={"lg"} className=" text-xl bg-teal-600 hover:bg-teal-700">
-          <Link href={"#contact"}>Kontakta oss</Link>
-        </Button>
+        <Link href={"#contact"}>
+          <Button
+            size={"lg"}
+            className=" text-xl bg-teal-600 hover:bg-teal-700"
+          >
+            Kontakta oss
+          </Button>
+        </Link>
       </div>
     </section>
   );

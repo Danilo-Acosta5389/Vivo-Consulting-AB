@@ -1,11 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Dialog, DialogPanel } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import NavLinks from "./nav-links";
 import Links from "./types";
+import TemporaryDrawer from "@/components/ui/drawer";
 
 const links: Links[] = [
   {
@@ -26,14 +25,14 @@ const links: Links[] = [
 ];
 
 export default function Example() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  // const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [linkName, setLinkName] = useState("");
 
   return (
     <header className="bg-white border-b border-gray-300 max-h-[73] min-h-[73] sticky top-0 z-30">
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-7xl items-center sm:justify-between justify-between p-6 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
           <Link
@@ -43,6 +42,11 @@ export default function Example() {
           >
             <span className=" absolute top-6">LOGO</span>
           </Link>
+        </div>
+        <div className="flex lg:flex-1 lg:hidden">
+          <div className="-m-1.5 p-1.5">
+            <span className=" sr-only">PLACEHOLDER</span>
+          </div>
         </div>
         <div className="hidden sm:flex sm:gap-x-12">
           <NavLinks
@@ -56,7 +60,7 @@ export default function Example() {
             <span className=" sr-only">PLACEHOLDER</span>
           </div>
         </div>
-        <div className="flex sm:hidden">
+        {/* <div className="flex sm:hidden">
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
@@ -65,9 +69,10 @@ export default function Example() {
             <span className="sr-only">Open main menu</span>
             <Bars3Icon aria-hidden="true" className="size-6" />
           </button>
-        </div>
+        </div> */}
+        <TemporaryDrawer opensFrom="right" links={links} />
       </nav>
-      <Dialog
+      {/* <Dialog
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
         className="lg:hidden"
@@ -111,7 +116,7 @@ export default function Example() {
             </div>
           </div>
         </DialogPanel>
-      </Dialog>
+      </Dialog> */}
     </header>
   );
 }
