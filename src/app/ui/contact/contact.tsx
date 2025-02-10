@@ -22,7 +22,7 @@ export default function Contact() {
             size={"default"}
             className=" text-xl bg-teal-600 hover:bg-teal-700 max-w-44"
           >
-            Kontakta oss
+            Skicka
           </Button>
         </div>
       </div>
