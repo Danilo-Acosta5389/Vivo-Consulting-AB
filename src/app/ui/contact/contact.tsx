@@ -9,7 +9,7 @@ export default function Contact() {
       <div id="contact" className=" sr-only self-center relative -top-24"></div>
       <div className="flex flex-col items-center justify-center px-10">
         <p className=" self-start my-5 p-2 px-4 text-2xl">Kontakta oss</p>
-        <div className="self-start flex flex-col space-y-5">
+        <div className="self-start flex flex-col space-y-5 sm:max-w-80 w-full">
           <TextField id="outlined-basic" label="Namn" variant="outlined" />
           <TextField id="outlined-basic" label="E-post" variant="outlined" />
           <TextField id="outlined-basic" label="Nummer" variant="outlined" />
