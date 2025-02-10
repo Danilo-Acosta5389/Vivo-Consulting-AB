@@ -30,7 +30,7 @@ export default function Example() {
   const [linkName, setLinkName] = useState("");
 
   return (
-    <header className="bg-white border-b border-gray-300 max-h-[73] sticky top-0 z-20">
+    <header className="bg-white border-b border-gray-300 max-h-[73] min-h-[73] sticky top-0 z-30">
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center sm:justify-between justify-between p-6 lg:px-8"
@@ -38,10 +38,10 @@ export default function Example() {
         <div className="flex lg:flex-1">
           <Link
             href="#home"
-            className="-m-1.5 p-1.5"
+            className="-m-1.5 p-1.5 pb-1"
             onClick={() => setLinkName("")}
           >
-            <span className="">LOGO</span>
+            <span className=" absolute top-6">LOGO</span>
           </Link>
         </div>
         <div className="hidden sm:flex sm:gap-x-12">
@@ -73,7 +73,7 @@ export default function Example() {
         className="lg:hidden"
       >
         <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-20 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <DialogPanel className="fixed inset-y-0 right-0 z-30 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link
               href="#home"

@@ -25,9 +25,9 @@ function NavLinks({
             href={link.href}
             onClick={() => setActiveLink(link.name)}
             className={clsx(
-              "text-sm leading-[24px] font-semibold text-gray-900",
+              "text-sm leading-[24px] font-semibold text-gray-900 px-6",
               {
-                "text-sm leading-[24px] font-semibold text-gray-900 border-b-2 mb-[-1.5px] border-gray-900":
+                "text-sm leading-[24px] font-semibold text-gray-900 border-b-2 px-6 border-gray-900":
                   link.name === activeLink,
               }
             )}
