@@ -4,8 +4,39 @@ import {
   CardDescription,
   CardTitle,
 } from "@/components/ui/card";
+import { InfiniteMovingLogos } from "./infinite-moving-logos";
 
 function References() {
+  const clients = [
+    {
+      name: "Region Stockholm",
+      image: "/region-sthlm.png",
+    },
+    {
+      name: "Region Stockholm",
+      image: "/region-sthlm.png",
+    },
+    {
+      name: "Region Stockholm",
+      image: "/region-sthlm.png",
+    },
+    {
+      name: "Region Stockholm",
+      image: "/region-sthlm.png",
+    },
+    {
+      name: "Region Stockholm",
+      image: "/region-sthlm.png",
+    },
+    {
+      name: "Region Stockholm",
+      image: "/region-sthlm.png",
+    },
+    {
+      name: "Region Stockholm",
+      image: "/region-sthlm.png",
+    },
+  ];
   const reviews = [
     {
       qoute: "“Mycket snabba handläggningar och lätta att få kontakt med.”",
@@ -52,29 +83,45 @@ function References() {
               <CardDescription>{rev.position}</CardDescription>
             </Card>
           ))} */}
-          <Card className="p-5 self-start md:col-span-4 sm:w-[300px] sm:max-w-full max-w-[290px] md:w-fit h-[180px] flex flex-col justify-between bg-teal-400 shadow-gray-200">
+          <Card className="p-5 self-start md:col-span-4 sm:w-[300px] sm:max-w-full max-w-[290px] md:w-fit h-[180px] flex flex-col justify-between bg-teal-400 shadow-gray-200 text-black">
             <CardContent className=" p-0 mb-5">{reviews[0].qoute}</CardContent>
             <div>
               <CardTitle>{reviews[0].name}</CardTitle>
-              <CardDescription>{reviews[0].position}</CardDescription>
+              <CardDescription className="text-slate-800">
+                {reviews[0].position}
+              </CardDescription>
             </div>
           </Card>
-          <Card className="p-5 sm:w-[370px] sm:max-w-full max-w-[350px] self-end md:w-fit md:col-span-4 md:h-[152px] flex flex-col justify-between bg-teal-400 shadow-gray-200">
+          <Card className="p-5 sm:w-[370px] sm:max-w-full max-w-[350px] self-end md:self-start md:w-fit md:col-span-4 md:h-[152px] flex flex-col justify-between bg-teal-400 shadow-gray-200">
             <CardContent className=" p-0 mb-5">{reviews[1].qoute}</CardContent>
-            <CardTitle>{reviews[1].name}</CardTitle>
-            <CardDescription>{reviews[1].position}</CardDescription>
+            <div>
+              <CardTitle>{reviews[1].name}</CardTitle>
+              <CardDescription className="text-slate-800">
+                {reviews[1].position}
+              </CardDescription>
+            </div>
           </Card>
           <Card className="p-5 self-center md:col-span-3 flex flex-col justify-between bg-teal-400 shadow-gray-200">
             <CardContent className=" p-0 mb-5">{reviews[2].qoute}</CardContent>
             <CardTitle>{reviews[2].name}</CardTitle>
-            <CardDescription>{reviews[2].position}</CardDescription>
+            <CardDescription className="text-slate-800">
+              {reviews[2].position}
+            </CardDescription>
           </Card>
           <Card className="p-5 md:col-span-3 md:col-start-5 flex flex-col justify-between bg-teal-400 shadow-gray-200">
             <CardContent className=" p-0 mb-5">{reviews[3].qoute}</CardContent>
             <CardTitle>{reviews[3].name}</CardTitle>
-            <CardDescription>{reviews[3].position}</CardDescription>
+            <CardDescription className="text-slate-800">
+              {reviews[3].position}
+            </CardDescription>
           </Card>
         </div>
+        <InfiniteMovingLogos
+          items={clients}
+          direction="right"
+          speed="slow"
+          pauseOnHover={false}
+        />
       </div>
     </section>
   );

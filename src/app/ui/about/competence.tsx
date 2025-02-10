@@ -14,14 +14,12 @@ function Competence() {
     "Treserva",
     "Cosmic",
     "Melior",
-    "Viva",
-    "Vita",
-    "Vigor",
+    "Viva HSL",
   ];
   return (
-    <section className="max-w-7xl flex flex-col items-center justify-center bg-slate-100 py-8">
+    <section className="max-w-7xl flex flex-col items-center justify-center bg-slate-100 py-10 pb-20">
       <div className=" flex flex-col items-center justify-center">
-        <p className=" border border-black rounded-md p-2 px-4 mb-5 text-xl">
+        <p className=" border border-black rounded-md p-2 px-4 mb-14 text-xl">
           Kompetenser
         </p>
       </div>
