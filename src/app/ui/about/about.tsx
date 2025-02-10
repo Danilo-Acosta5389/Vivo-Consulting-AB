@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Competence from "./competence";
 
 export default function About() {
   const sellingPoints = [
@@ -47,6 +48,7 @@ export default function About() {
           className="opacity-90 lg:my-0 my-10"
         />
       </div>
+      <Competence />
     </section>
   );
 }
