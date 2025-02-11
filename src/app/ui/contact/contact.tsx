@@ -31,7 +31,7 @@ export default function Contact() {
   }, [state, toast]);
 
   return (
-    <section className=" h-screen max-w-7xl bg-slate-100 py-8">
+    <section className=" h-screen sm:h-full max-w-7xl bg-slate-100 py-8">
       <div id="contact" className=" sr-only self-center relative -top-24"></div>
       <div className="flex flex-col items-center justify-center px-10">
         <p className=" self-start my-5 p-2 px-4 text-2xl">Kontakta oss</p>
