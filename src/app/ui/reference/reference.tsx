@@ -71,10 +71,10 @@ function References() {
         <p className=" border border-black rounded-md p-2 px-4 text-xl">
           Vad våra kunder tycker
         </p>
-        <div className=" flex flex-col items-start justify-evenly space-y-12 md:space-y-0 md:grid md:grid-cols-8 md:grid-rows-2 md:gap-x-20 md:gap-y-10 my-20 text-lg">
+        <div className=" overflow-hidden flex flex-col items-start justify-evenly space-y-12 md:space-y-0 md:grid md:grid-cols-8 md:grid-rows-2 md:gap-x-20 md:gap-y-10 my-20 text-lg">
           <motion.div
             transition={{ duration: 1 }}
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -10 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             className="self-start md:col-span-4 "
@@ -93,7 +93,7 @@ function References() {
           </motion.div>
           <motion.div
             transition={{ duration: 1, delay: 0.3 }}
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 10 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             className="md:col-span-4"
@@ -112,7 +112,7 @@ function References() {
           </motion.div>
           <motion.div
             transition={{ duration: 1, delay: 0.5 }}
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -10 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             className="self-center md:col-span-3"
@@ -129,7 +129,7 @@ function References() {
           </motion.div>
           <motion.div
             transition={{ duration: 1, delay: 0.4 }}
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 10 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             className="md:col-span-3 md:col-start-5"
