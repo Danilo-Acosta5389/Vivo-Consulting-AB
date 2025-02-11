@@ -7,7 +7,6 @@ import Form from "next/form";
 import { sendEmail } from "@/app/actions/contactAction";
 import { ActionResponse } from "@/app/types/mail";
 import { useToast } from "@/hooks/use-toast";
-import { ToastViewport } from "@radix-ui/react-toast";
 
 const initialState: ActionResponse = {
   success: false,
@@ -29,7 +28,7 @@ export default function Contact() {
         description: "Ditt meddelande har skickats",
       });
     }
-  }, [state]);
+  }, [state, toast]);
 
   return (
     <section className=" h-screen max-w-7xl bg-slate-100 py-8">

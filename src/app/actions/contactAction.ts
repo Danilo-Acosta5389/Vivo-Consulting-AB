@@ -1,6 +1,6 @@
 "use server";
 
-import { number, z } from "zod";
+import { z } from "zod";
 import type { ActionResponse, ContactFormData } from "../types/mail";
 
 const mailSchema = z.object({
@@ -46,7 +46,7 @@ export async function sendEmail(
       success: true,
       message: "Meddelande skickad!",
     };
-  } catch (err) {
+  } catch {
     return {
       success: false,
       message: "Något gick fel",
