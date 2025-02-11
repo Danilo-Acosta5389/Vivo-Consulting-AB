@@ -1,3 +1,5 @@
+"use client";
+
 import Navbar from "./ui/navbar/navbar";
 import Hero from "./ui/hero/hero";
 import About from "./ui/about/about";
