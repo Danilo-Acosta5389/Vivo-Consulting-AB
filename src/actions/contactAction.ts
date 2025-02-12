@@ -10,8 +10,8 @@ const mailSchema = z.object({
     .email("Var god ange e-post"),
   number: z
     .number({ message: "Fel inmatning" })
-    .min(1234, "Får inte vara kortare än 4 nummer")
-    .max(12345678901234567890, "Får inte vara längre än 20 nummer"),
+    .min(1234, "Får inte vara kortare än 4 tecken")
+    .max(12345678901234567890, "Får inte vara längre än 20 tecken"),
   message: z
     .string({ message: "Får inte lämnas tomt" })
     .min(2, "Ange minst två tecken"),

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
-import NavlinkContextProvider from "./context/navlink-context";
+import NavlinkContextProvider from "../context/navlink-context";
 
 export const metadata: Metadata = {
   title: "Vivo Consulting AB",

@@ -6,7 +6,7 @@ import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import Links from "@/app/ui/navbar/types";
+import Links from "@/components/navbar/types";
 import Link from "next/link";
 
 type Anchor = "top" | "left" | "bottom" | "right";

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import NavLinks from "./nav-links";
 import Links from "./types";
-import { useNavlinkContext } from "@/app/context/navlink-context";
+import { useNavlinkContext } from "@/context/navlink-context";
 
 const links: Links[] = [
   {

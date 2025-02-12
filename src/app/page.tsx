@@ -1,10 +1,10 @@
 "use client";
 
-import Navbar from "./ui/navbar/navbar";
-import Hero from "./ui/hero/hero";
-import About from "./ui/about/about";
-import References from "./ui/reference/reference";
-import Contact from "./ui/contact/contact";
+import Navbar from "../components/navbar/navbar";
+import Hero from "../components/hero/hero";
+import About from "../components/about/about";
+import References from "../components/reference/reference";
+import Contact from "../components/contact/contact";
 
 export default function Home() {
   return (

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Competence from "./competence";
-import { useNavlinkContext } from "@/app/context/navlink-context";
+import { useNavlinkContext } from "@/context/navlink-context";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
