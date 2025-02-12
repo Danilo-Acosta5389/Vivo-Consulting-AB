@@ -1,7 +1,12 @@
 import Image from "next/image";
 import Competence from "./competence";
+import { useNavlinkContext } from "@/app/context/navlink-context";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 export default function About() {
+  const { ref, inView } = useInView();
+  const { setActiveLink } = useNavlinkContext();
   const sellingPoints = [
     {
       title: "Erfarenhet du kan lita på",
@@ -19,6 +24,13 @@ export default function About() {
         "Vår verksamhet bygger på trygghet, kontinuitet och en genuin omtanke om varje patient.",
     },
   ];
+
+  useEffect(() => {
+    console.log("About: " + inView);
+    if (inView) {
+      setActiveLink("Om oss");
+    }
+  }, [inView]);
 
   return (
     <section className="flex flex-col bg-slate-100">
@@ -40,7 +52,11 @@ export default function About() {
             </div>
           ))}
         </div>
+        {/* <div  className=" sr-only">
+          ref
+        </div> */}
         <Image
+          ref={ref}
           src="/nurses.jpeg"
           alt="Image of nurses"
           width={500}

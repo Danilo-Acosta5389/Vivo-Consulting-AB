@@ -7,6 +7,8 @@ import Form from "next/form";
 import { sendEmail } from "@/app/actions/contactAction";
 import { ActionResponse } from "@/app/types/mail";
 import { useToast } from "@/hooks/use-toast";
+import { useNavlinkContext } from "@/app/context/navlink-context";
+import { useInView } from "react-intersection-observer";
 
 const initialState: ActionResponse = {
   success: false,
@@ -14,14 +16,11 @@ const initialState: ActionResponse = {
 };
 
 export default function Contact() {
+  const { ref, inView } = useInView();
+  const { setActiveLink } = useNavlinkContext();
   const { toast } = useToast();
   const [state, action, isPending] = useActionState(sendEmail, initialState);
   useEffect(() => {
-    console.log(state.success);
-    // console.log(state.message);
-    // console.log(state?.errors?.number);
-    console.log(initialState.success);
-    console.log(JSON.stringify(state.inputs));
     if (state.success) {
       toast({
         title: "Tack!",
@@ -30,12 +29,20 @@ export default function Contact() {
     }
   }, [state, toast]);
 
+  useEffect(() => {
+    console.log("Contact: " + inView);
+    if (inView) {
+      setActiveLink("Kontakt");
+    }
+  }, [inView]);
+
   return (
     <section className=" h-screen sm:h-full max-w-7xl bg-slate-100 py-8">
       <div id="contact" className=" sr-only self-center relative -top-24"></div>
       <div className="flex flex-col items-center justify-center px-10">
         <p className=" self-start my-5 p-2 px-4 text-2xl">Kontakta oss</p>
         <Form
+          ref={ref}
           action={action}
           className="self-start flex flex-col space-y-5 sm:max-w-80 w-full"
         >
