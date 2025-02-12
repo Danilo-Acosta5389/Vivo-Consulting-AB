@@ -4,10 +4,10 @@ import { useActionState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import TextField from "@mui/material/TextField";
 import Form from "next/form";
-import { sendEmail } from "@/app/actions/contactAction";
-import { ActionResponse } from "@/app/types/mail";
+import { sendEmail } from "@/actions/contactAction";
+import { ActionResponse } from "@/types/mail";
 import { useToast } from "@/hooks/use-toast";
-import { useNavlinkContext } from "@/app/context/navlink-context";
+import { useNavlinkContext } from "@/context/navlink-context";
 import { useInView } from "react-intersection-observer";
 
 const initialState: ActionResponse = {

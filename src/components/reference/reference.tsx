@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/card";
 import { InfiniteMovingLogos } from "./infinite-moving-logos";
 import * as motion from "motion/react-client";
-import { useNavlinkContext } from "@/app/context/navlink-context";
+import { useNavlinkContext } from "@/context/navlink-context";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 

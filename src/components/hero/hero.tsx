@@ -1,4 +1,4 @@
-import { useNavlinkContext } from "@/app/context/navlink-context";
+import { useNavlinkContext } from "@/context/navlink-context";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
