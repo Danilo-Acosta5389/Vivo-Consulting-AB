@@ -1,8 +1,18 @@
+import { useNavlinkContext } from "@/app/context/navlink-context";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 function Hero() {
+  const { ref, inView } = useInView();
+  const { setActiveLink } = useNavlinkContext();
+  useEffect(() => {
+    if (inView) {
+      setActiveLink("");
+    }
+  }, [inView]);
   return (
     <section className=" overflow-hidden bg-slate-500 flex flex-col items-center justify-center relative max-h-[25rem]">
       <Image
@@ -23,6 +33,7 @@ function Hero() {
         </p>
         <Link href={"#contact"}>
           <Button
+            ref={ref}
             size={"lg"}
             className=" text-xl bg-teal-600 hover:bg-teal-700"
           >

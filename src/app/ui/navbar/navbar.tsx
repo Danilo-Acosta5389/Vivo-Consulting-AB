@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import NavLinks from "./nav-links";
 import Links from "./types";
+import { useNavlinkContext } from "@/app/context/navlink-context";
 
 const links: Links[] = [
   {
@@ -23,9 +23,8 @@ const links: Links[] = [
   },
 ];
 
-export default function Example() {
-  // const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [linkName, setLinkName] = useState("");
+export default function Navbar() {
+  const { activeLink, setActiveLink } = useNavlinkContext();
 
   return (
     <header className="bg-white border-b border-gray-300 min-h-[73] sticky top-0 z-30">
@@ -37,7 +36,7 @@ export default function Example() {
           <Link
             href="#home"
             className="-m-1.5 p-1.5 pb-1"
-            onClick={() => setLinkName("")}
+            onClick={() => setActiveLink("")}
           >
             <span className=" sm:absolute sm:top-6">LOGO</span>
           </Link>
@@ -49,8 +48,8 @@ export default function Example() {
         </div>
         <div className="flex sm:gap-x-12">
           <NavLinks
-            activeLink={linkName}
-            setActiveLink={setLinkName}
+            activeLink={activeLink}
+            setActiveLink={setActiveLink}
             links={links}
           />
         </div>

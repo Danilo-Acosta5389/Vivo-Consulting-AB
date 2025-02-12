@@ -6,8 +6,13 @@ import {
 } from "@/components/ui/card";
 import { InfiniteMovingLogos } from "./infinite-moving-logos";
 import * as motion from "motion/react-client";
+import { useNavlinkContext } from "@/app/context/navlink-context";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 function References() {
+  const { ref, inView } = useInView();
+  const { setActiveLink } = useNavlinkContext();
   const clients = [
     {
       name: "Region Stockholm",
@@ -60,6 +65,12 @@ function References() {
       position: "SSK",
     },
   ];
+  useEffect(() => {
+    console.log("References: " + inView);
+    if (inView) {
+      setActiveLink("Referenser");
+    }
+  }, [inView]);
 
   return (
     <section className=" max-w-7xl bg-slate-50 py-8">
@@ -73,6 +84,7 @@ function References() {
         </p>
         <div className=" overflow-hidden flex flex-col items-start justify-evenly space-y-12 md:space-y-0 md:grid md:grid-cols-8 md:grid-rows-2 md:gap-x-20 md:gap-y-10 my-20 text-lg">
           <motion.div
+            ref={ref}
             transition={{ duration: 1 }}
             initial={{ opacity: 0, x: -10 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -148,8 +160,7 @@ function References() {
         <InfiniteMovingLogos
           items={clients}
           direction="right"
-          speed="slow"
-          pauseOnHover={false}
+          pauseOnHover={true}
         />
       </div>
     </section>
