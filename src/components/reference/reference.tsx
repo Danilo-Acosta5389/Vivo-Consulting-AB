@@ -7,7 +7,7 @@ import {
 import { InfiniteMovingLogos } from "./infinite-moving-logos";
 import * as motion from "motion/react-client";
 import { useNavlinkContext } from "@/context/navlink-context";
-import { useEffect } from "react";
+import { ReactHTMLElement, ReactNode, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
 function References() {
@@ -45,22 +45,22 @@ function References() {
   ];
   const reviews = [
     {
-      qoute: "“Mycket snabba handläggningar och lätta att få kontakt med.”",
+      qoute: "Mycket snabba handläggningar och lätta att få kontakt med.",
       name: "Gasha Salar",
       position: "Biträdande verksamhetschef",
     },
     {
-      qoute: "“Professionellt bemanningsföretag och bra samarbete.”",
+      qoute: "Professionellt bemanningsföretag och bra samarbete.",
       name: "Nino Mullic",
       position: "VD, Hammarbygruppen AB",
     },
     {
-      qoute: "“Bra samarbete och fint bemötande”",
+      qoute: "Bra samarbete och fint bemötande",
       name: "Tania Bolevin",
       position: "Verksamhetschef, Blomsterfonden",
     },
     {
-      qoute: "“Ett seriöst företag med fint bemötande”",
+      qoute: "Ett seriöst företag med fint bemötande",
       name: "Michaela Lupu",
       position: "SSK",
     },
@@ -82,18 +82,20 @@ function References() {
         <p className=" border border-black rounded-md p-2 px-4 text-xl">
           Vad våra kunder tycker
         </p>
-        <div className=" overflow-hidden flex flex-col items-start justify-evenly space-y-12 md:space-y-0 md:grid md:grid-cols-8 md:grid-rows-2 md:gap-x-20 md:gap-y-10 my-20 text-lg">
+        <div
+          className={`px-4 overflow-hidden flex flex-col max-w-[22rem] md:max-w-full items-start justify-evenly space-y-6 md:space-y-0 md:grid md:grid-cols-8 md:grid-rows-2 md:gap-x-20 md:gap-y-14 my-20 text-lg`}
+        >
           <motion.div
             ref={ref}
             transition={{ duration: 1 }}
             initial={{ opacity: 0, x: -10 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
-            className="self-start md:col-span-4 "
+            className=" md:col-span-4 "
           >
-            <Card className="p-5 sm:w-[300px] sm:max-w-full max-w-[290px] md:w-fit h-[180px] flex flex-col justify-between bg-gradient-to-t from-teal-500 to-teal-100 shadow-gray-200 text-black">
+            <Card className=" rounded-lg p-5 sm:max-w-full md:w-fit h-full md:h-[180px] flex flex-col justify-between bg-gradient-to-t from-teal-400 to-teal-200 shadow-gray-200 text-black">
               <CardContent className=" p-0 mb-5">
-                {reviews[0].qoute}
+                <BQM>{reviews[0].qoute}</BQM>
               </CardContent>
               <div>
                 <CardTitle>{reviews[0].name}</CardTitle>
@@ -104,15 +106,15 @@ function References() {
             </Card>
           </motion.div>
           <motion.div
-            transition={{ duration: 1, delay: 0.3 }}
+            transition={{ duration: 1 }}
             initial={{ opacity: 0, x: 10 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             className="md:col-span-4"
           >
-            <Card className="p-5 sm:w-[370px] sm:max-w-full max-w-[350px] self-end md:self-start md:w-fit md:h-[152px] flex flex-col justify-between bg-gradient-to-bl from-teal-500 to-teal-100 shadow-gray-200">
+            <Card className="rounded-lg p-5 md:w-fit h-full md:h-[152px] flex flex-col justify-between bg-gradient-to-bl from-teal-400 to-teal-200 shadow-gray-200">
               <CardContent className=" p-0 mb-5">
-                {reviews[1].qoute}
+                <BQM>{reviews[1].qoute}</BQM>
               </CardContent>
               <div>
                 <CardTitle>{reviews[1].name}</CardTitle>
@@ -123,15 +125,15 @@ function References() {
             </Card>
           </motion.div>
           <motion.div
-            transition={{ duration: 1, delay: 0.5 }}
+            transition={{ duration: 1 }}
             initial={{ opacity: 0, x: -10 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
-            className="self-center md:col-span-3"
+            className="md:col-span-3"
           >
-            <Card className="p-5 flex flex-col justify-between bg-gradient-to-br from-teal-500 to-teal-100 shadow-gray-200">
+            <Card className="rounded-lg p-5 flex flex-col justify-between bg-gradient-to-br from-teal-400 to-teal-200 shadow-gray-200">
               <CardContent className=" p-0 mb-5">
-                {reviews[2].qoute}
+                <BQM>{reviews[2].qoute}</BQM>
               </CardContent>
               <CardTitle>{reviews[2].name}</CardTitle>
               <CardDescription className="text-slate-800">
@@ -140,15 +142,15 @@ function References() {
             </Card>
           </motion.div>
           <motion.div
-            transition={{ duration: 1, delay: 0.4 }}
+            transition={{ duration: 1 }}
             initial={{ opacity: 0, x: 10 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             className="md:col-span-3 md:col-start-5"
           >
-            <Card className="p-5 flex flex-col justify-between bg-gradient-to-tl from-teal-500 to-teal-100 shadow-gray-200">
+            <Card className="rounded-lg p-5 flex flex-col justify-between bg-gradient-to-tl from-teal-400 to-teal-200 shadow-gray-200">
               <CardContent className=" p-0 mb-5">
-                {reviews[3].qoute}
+                <BQM>{reviews[3].qoute}</BQM>
               </CardContent>
               <CardTitle>{reviews[3].name}</CardTitle>
               <CardDescription className="text-slate-800">
@@ -168,3 +170,14 @@ function References() {
 }
 
 export default References;
+
+function BQM({ children }: { children: ReactNode }) {
+  /*Bold Qoutation Marks, lol */
+  return (
+    <>
+      <b className=" text-2xl font-serif">“</b>
+      {children}
+      <b className=" text-2xl font-serif">”</b>
+    </>
+  );
+}
