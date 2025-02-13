@@ -10,9 +10,9 @@ import {
 function Competence() {
   const skills = [
     "Take Care",
-    "Magna Cura",
     "Treserva",
     "Cosmic",
+    "Magna Cura",
     "Melior",
     "Viva HSL",
     "Safedoc",
@@ -40,18 +40,19 @@ function Competence() {
         opts={{
           align: "start",
         }}
-        className="w-full lg:max-w-4xl max-w-[400px]"
+        className="w-full flex sm:space-x-6"
       >
+        <CarouselPrevious className=" hidden sm:flex p-5 relative left-3 top-7 " />
         <CarouselContent className="">
           {skills.map((name, index) => (
             <CarouselItem
               key={index}
-              className="max-w-xs md:basis-1/2 lg:basis-1/5 "
+              className="max-w-fit md:basis-1/2 lg:basis-1/5 "
             >
               <div className="p-1">
                 <Card className="">
-                  <CardContent className=" p-1 bg-blue-800 rounded-lg text-white">
-                    <span className="text-2xl font-semibold flex flex-col items-center justify-center">
+                  <CardContent className=" p-2 px-4 bg-blue-900 rounded-2xl text-white">
+                    <span className="text-xl font-semibold flex flex-col items-center justify-center whitespace-nowrap">
                       {name}
                     </span>
                   </CardContent>
@@ -60,12 +61,7 @@ function Competence() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        {/* <div className="sm:hidden flex items-center justify-between w-full absolute top-[25] pointer-events-none z-0">
-          <CarouselPrevious className="static z-50 pointer-events-auto" />
-          <CarouselNext className="static z-50 pointer-events-auto" />
-        </div> */}
-        <CarouselPrevious className="hidden sm:flex" />
-        <CarouselNext className="hidden sm:flex" />
+        <CarouselNext className="hidden sm:flex p-5 relative right-3 top-7" />
       </Carousel>
     </section>
   );
