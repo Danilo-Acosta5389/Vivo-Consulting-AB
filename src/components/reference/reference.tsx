@@ -157,11 +157,7 @@ function References() {
             </Card>
           </motion.div>
         </div>
-        <InfiniteMovingLogos
-          items={clients}
-          direction="right"
-          pauseOnHover={true}
-        />
+        <InfiniteMovingLogos items={clients} direction="right" />
       </div>
     </section>
   );
