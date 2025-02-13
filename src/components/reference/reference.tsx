@@ -7,6 +7,7 @@ import {
 import { InfiniteMovingLogos } from "./infinite-moving-logos";
 import * as motion from "motion/react-client";
 import { useNavlinkContext } from "@/context/navlink-context";
+import { ReactNode, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
 function References() {
