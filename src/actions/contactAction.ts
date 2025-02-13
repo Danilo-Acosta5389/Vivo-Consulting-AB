@@ -1,21 +1,12 @@
 "use server";
 
-import { z } from "zod";
-import type { ActionResponse, ContactFormData } from "../types/mail";
-
-const mailSchema = z.object({
-  name: z.string({ message: "Får inte lämnas tomt" }).min(2, "Minst 2 tecken"),
-  email: z
-    .string({ message: "Får inte lämnas tomt" })
-    .email("Var god ange e-post"),
-  number: z
-    .number({ message: "Fel inmatning" })
-    .min(1234, "Får inte vara kortare än 4 tecken")
-    .max(12345678901234567890, "Får inte vara längre än 20 tecken"),
-  message: z
-    .string({ message: "Får inte lämnas tomt" })
-    .min(2, "Ange minst två tecken"),
-});
+import {
+  mailSchema,
+  type ActionResponse,
+  type ContactFormData,
+  type SendEmailDTO,
+} from "../types/mail";
+import emailSender from "@/utils/email-sender";
 
 export async function sendEmail(
   prevState: ActionResponse | null,
@@ -25,7 +16,7 @@ export async function sendEmail(
     const rawData: ContactFormData = {
       name: formData.get("name") as string,
       email: formData.get("email") as string,
-      number: Number(formData.get("number")),
+      number: formData.get("number") as string,
       message: formData.get("message") as string,
     };
 
@@ -40,7 +31,15 @@ export async function sendEmail(
       };
     }
 
-    console.log("Email submitted: ", validatedData.data);
+    const emailDetails: SendEmailDTO = {
+      name: validatedData.data.name,
+      email: validatedData.data.email,
+      message: validatedData.data.message,
+      number: validatedData.data.number,
+    };
+    const result = await emailSender(emailDetails);
+    console.log("Success");
+    console.log(result);
 
     return {
       success: true,
