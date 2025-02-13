@@ -56,6 +56,7 @@ export default function Contact() {
                 : false
             }
             helperText={state.errors?.name}
+            type="text"
             id="name"
             name="name"
             label="Namn"
@@ -76,14 +77,12 @@ export default function Contact() {
             variant="outlined"
           />
           <TextField
-            // defaultValue={
-            //   !Number.isNaN(state?.inputs?.number) && state?.inputs?.number
-            // }
+            defaultValue={state?.inputs?.number}
             error={
               state.errors?.number ? (state.success ? false : true) : false
             }
-            type="number"
             helperText={state.errors?.number}
+            type="number"
             id="number"
             name="number"
             label="Nummer"
@@ -102,6 +101,7 @@ export default function Contact() {
             placeholder="Skriv ditt meddelande här"
             multiline
             rows={5}
+            type="text"
             id="message"
             name="message"
             label="Meddelande"
