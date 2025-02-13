@@ -15,6 +15,19 @@ function Competence() {
     "Cosmic",
     "Melior",
     "Viva HSL",
+    "Safedoc",
+    "Procapita",
+    "ICF Vodok 2.0",
+    "Pulsen Combine",
+    "System Cross",
+    "Vas",
+    "Journal3",
+    "PMO",
+    "Lifecare",
+    "Alfa eCare",
+    "Epsilon",
+    "Sekoia",
+    "OmsorgProd",
   ];
   return (
     <section className="max-w-7xl flex flex-col items-center justify-center bg-slate-100 py-10 pb-20">
