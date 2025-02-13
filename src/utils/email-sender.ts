@@ -44,11 +44,12 @@ export default async function emailSender(dto: SendEmailDTO) {
       text: dto.message,
       html: `
       <body style="">
-      <h2>Detta är ett mejl från vivoconsulting(.)se</h2>
+      <h3>Ett meddelande har skickats från Vivo Consultings hemsida</h3>
+      <h4>Personens uppgifter</h4>
       <p>Namn: ${dto.name}</p>
       <p>E-post: ${dto.email}</p>
       <p>Telefonnr: ${dto.number}</p>
-      <h5>Meddelande:</h5>
+      <h4>Meddelande:</h4>
       <p style="max-width:500px;">${dto.message}</p>
       </body>`.trim(),
     });
