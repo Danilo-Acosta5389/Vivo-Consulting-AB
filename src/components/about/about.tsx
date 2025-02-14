@@ -26,11 +26,11 @@ export default function About() {
   ];
 
   useEffect(() => {
-    console.log("About: " + inView);
+    //console.log("About: " + inView);
     if (inView) {
       setActiveLink("Om oss");
     }
-  }, [inView]);
+  }, [inView, setActiveLink]);
 
   return (
     <section className="flex flex-col bg-slate-100">

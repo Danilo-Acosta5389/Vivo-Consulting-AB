@@ -12,7 +12,7 @@ function Hero() {
     if (inView) {
       setActiveLink("");
     }
-  }, [inView]);
+  }, [inView, setActiveLink]);
   return (
     <section className=" overflow-hidden bg-slate-500 flex flex-col items-center justify-center relative max-h-[25rem]">
       <Image

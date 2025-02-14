@@ -66,11 +66,11 @@ function References() {
     },
   ];
   useEffect(() => {
-    console.log("References: " + inView);
+    //console.log("References: " + inView);
     if (inView) {
       setActiveLink("Referenser");
     }
-  }, [inView]);
+  }, [inView, setActiveLink]);
 
   return (
     <section className=" max-w-7xl bg-slate-50 py-8">
