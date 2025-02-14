@@ -24,8 +24,9 @@ export const InfiniteMovingLogos = ({
   const scrollerRef = React.useRef<HTMLUListElement>(null);
 
   useEffect(() => {
-    addAnimation();
+    addAnimation(); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   const [start, setStart] = useState(false);
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {

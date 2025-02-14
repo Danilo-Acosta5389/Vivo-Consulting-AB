@@ -14,8 +14,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="sv">
-      <body id="home" className="w-full h-full flex flex-col">
+    <html className="bg-slate-100" lang="sv">
+      <body id="home" className="w-full h-full flex flex-col bg-slate-100">
         <NavlinkContextProvider>{children}</NavlinkContextProvider>
         <Toaster />
       </body>
