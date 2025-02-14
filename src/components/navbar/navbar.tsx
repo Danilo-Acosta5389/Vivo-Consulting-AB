@@ -41,7 +41,7 @@ export default function Navbar() {
             <span className=" sm:absolute sm:top-6">LOGO</span>
           </Link>
         </div>
-        <div className="flex lg:flex-1 lg:hidden">
+        <div className="flex lg:flex-1 sm:hidden">
           <div className="-m-1.5 p-1.5">
             <span className=" sr-only">PLACEHOLDER</span>
           </div>
