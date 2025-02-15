@@ -5,11 +5,12 @@ import { Button } from "@/components/ui/button";
 import TextField from "@mui/material/TextField";
 import Form from "next/form";
 import { sendEmail } from "@/actions/contactAction";
-import { ActionResponse } from "@/types/mail";
+import { ActionResponse, ContactFormData } from "@/types/mail";
 import { useToast } from "@/hooks/use-toast";
 import { useNavlinkContext } from "@/context/navlink-context";
 import { useInView } from "react-intersection-observer";
 import { styled } from "@mui/material/styles";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const CustomTextField = styled(TextField)({
   "& label.Mui-focused": {
@@ -40,9 +41,66 @@ export default function Contact() {
   const { ref, inView } = useInView();
   const { setActiveLink } = useNavlinkContext();
   const { toast } = useToast();
-  const [state, action, isPending] = useActionState(sendEmail, initialState);
+  const [state, action, isPending] = useActionState(submitAction, initialState);
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
+  async function submitAction(
+    prevState: ActionResponse | null,
+    formData: FormData
+  ): Promise<ActionResponse> {
+    const rawData: ContactFormData = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      number: formData.get("number") as string,
+      message: formData.get("message") as string,
+    };
+
+    try {
+      if (!executeRecaptcha) {
+        return initialState;
+      }
+
+      const token = await executeRecaptcha("form_submit");
+      //console.log("Token:", token);
+      const response = await fetch("/api/verify-recaptcha", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ token }),
+      });
+      //console.log(response);
+      const data = await response.json();
+      //console.log(data);
+      if (!data.success) {
+        console.log("An error ocurred when virefying with reCAPTCHA");
+        toast({
+          variant: "destructive",
+          title: "Ett problem uppstod",
+          description:
+            "Ditt meddelande har inte skickats. Vänligen försök igen senare.",
+        });
+        return {
+          success: false,
+          message: "Något gick fel",
+          inputs: rawData,
+        };
+      } else {
+        return await sendEmail(prevState, formData);
+      }
+    } catch (err) {
+      console.log("ERROR FROM RECAPTCHA CATCH BLOCK:", err);
+      return {
+        success: false,
+        message: "Något gick fel",
+        inputs: rawData,
+      };
+    }
+  }
+
   useEffect(() => {
     if (state.success) {
+      console.log("SUCCESSS");
       toast({
         title: "Tack!",
         description: "Ditt meddelande har skickats",
@@ -133,6 +191,23 @@ export default function Contact() {
             label="Meddelande*"
             variant="outlined"
           />
+          <div className="text-sm">
+            This site is protected by reCAPTCHA and the Google{" "}
+            <a
+              className=" underline text-blue-700"
+              href="https://policies.google.com/privacy"
+            >
+              Privacy Policy
+            </a>{" "}
+            and{" "}
+            <a
+              className=" underline text-blue-700"
+              href="https://policies.google.com/terms"
+            >
+              Terms of Service
+            </a>{" "}
+            apply.
+          </div>
           <Button
             type="submit"
             size={"default"}
