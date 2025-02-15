@@ -6,6 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 function Competence() {
   const skills = [
@@ -29,6 +30,7 @@ function Competence() {
     "Sekoia",
     "OmsorgProd",
   ];
+
   return (
     <section className="max-w-7xl flex flex-col items-center justify-center bg-slate-100 py-10 pb-20">
       <div className=" flex flex-col items-center justify-center">
@@ -40,6 +42,11 @@ function Competence() {
         opts={{
           align: "start",
         }}
+        plugins={[
+          Autoplay({
+            delay: 2000,
+          }),
+        ]}
         className="w-full flex sm:space-x-6"
       >
         <CarouselPrevious className=" hidden sm:flex p-5 relative left-3 top-7 " />
@@ -50,8 +57,8 @@ function Competence() {
               className="max-w-fit md:basis-1/2 lg:basis-1/5 "
             >
               <div className="p-1">
-                <Card className="">
-                  <CardContent className=" p-2 px-4 bg-blue-900 rounded-2xl text-white">
+                <Card className="bg-blue-950 rounded-2xl">
+                  <CardContent className=" p-2 px-4  text-white">
                     <span className="text-xl font-semibold flex flex-col items-center justify-center whitespace-nowrap">
                       {name}
                     </span>
