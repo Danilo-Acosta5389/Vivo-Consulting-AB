@@ -28,7 +28,7 @@ All credits go to:
 
 ## Live Demo
 
-If the project is deployed, add a link here: [Live Demo](https://dev-vivoconsulting.ddns.net)
+Project is currently hosted [here](https://dev-vivoconsulting.ddns.net)
 
 ## Prerequisites
 
