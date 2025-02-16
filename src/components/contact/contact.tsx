@@ -123,7 +123,7 @@ export default function Contact() {
         <Form
           ref={ref}
           action={action}
-          className="self-start flex flex-col space-y-5 sm:max-w-80 w-full"
+          className="self-start flex flex-col space-y-5 sm:max-w-80 w-full pb-10"
         >
           <CustomTextField
             disabled={isPending}
