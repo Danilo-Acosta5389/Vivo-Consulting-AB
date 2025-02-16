@@ -83,14 +83,14 @@ function References() {
           Vad våra kunder tycker
         </p>
         <div
-          className={`px-4 overflow-hidden flex flex-col max-w-[22rem] md:max-w-full items-start justify-evenly space-y-6 md:space-y-0 md:grid md:grid-cols-8 md:grid-rows-2 md:gap-x-20 md:gap-y-14 my-20 text-lg`}
+          className={`px-4 overflow-hidden flex flex-col max-w-[22rem] md:max-w-full items-start justify-evenly space-y-10 md:space-y-0 md:grid md:grid-cols-8 md:grid-rows-2 md:gap-x-20 md:gap-y-14 my-20 text-lg`}
         >
           <motion.div
             ref={ref}
             transition={{ duration: 1 }}
-            initial={{ opacity: 0, x: -10 }}
+            initial={{ opacity: 0, x: -15 }}
             whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
+            // viewport={{ once: true }}
             className=" md:col-span-4 "
           >
             <Card className=" rounded-lg p-5 sm:max-w-full md:w-fit h-full md:h-[180px] flex flex-col justify-between bg-gradient-to-t from-teal-400 to-teal-200 shadow-gray-200 text-black">
@@ -107,9 +107,9 @@ function References() {
           </motion.div>
           <motion.div
             transition={{ duration: 1 }}
-            initial={{ opacity: 0, x: 10 }}
+            initial={{ opacity: 0, x: -15 }}
             whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
+            // viewport={{ once: true }}
             className="md:col-span-4"
           >
             <Card className="rounded-lg p-5 md:w-fit h-full md:h-[152px] flex flex-col justify-between bg-gradient-to-bl from-teal-400 to-teal-200 shadow-gray-200">
@@ -126,9 +126,9 @@ function References() {
           </motion.div>
           <motion.div
             transition={{ duration: 1 }}
-            initial={{ opacity: 0, x: -10 }}
+            initial={{ opacity: 0, x: -15 }}
             whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
+            // viewport={{ once: true }}
             className="md:col-span-3"
           >
             <Card className="rounded-lg p-5 flex flex-col justify-between bg-gradient-to-br from-teal-400 to-teal-200 shadow-gray-200">
@@ -143,9 +143,9 @@ function References() {
           </motion.div>
           <motion.div
             transition={{ duration: 1 }}
-            initial={{ opacity: 0, x: 10 }}
+            initial={{ opacity: 0, x: -15 }}
             whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
+            // viewport={{ once: true }}
             className="md:col-span-3 md:col-start-5"
           >
             <Card className="rounded-lg p-5 flex flex-col justify-between bg-gradient-to-tl from-teal-400 to-teal-200 shadow-gray-200">
