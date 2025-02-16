@@ -1,4 +1,4 @@
-# Vivo Consulting Website with Next.js & TypeScript
+# Vivo Consulting AB
 
 This is the company Vivo Consulting AB's website built with Next.js and TypeScript. It serves as an informative platform and allows users to contact the company via an email form. The form includes validation using Zod and prevents bot submissions using Google ReCAPTCHA v3.
 
