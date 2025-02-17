@@ -1,17 +1,22 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import {
+  Dispatch,
+  SetStateAction,
+  ReactNode,
+  createContext,
+  useContext,
+  useState,
+} from "react";
 
 type NavlinkContextType = {
   activeLink: string;
-  setActiveLink: React.Dispatch<React.SetStateAction<string>>;
+  setActiveLink: Dispatch<SetStateAction<string>>;
 };
 
 export const NavlinkContext = createContext<NavlinkContextType | undefined>(
   undefined
 );
-
-import { ReactNode } from "react";
 
 export default function NavlinkContextProvider({
   children,
