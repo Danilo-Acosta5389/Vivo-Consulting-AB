@@ -24,13 +24,10 @@ function NavLinks({
             key={link.name}
             href={link.href}
             onClick={() => setActiveLink(link.name)}
-            className={clsx(
-              "text-sm leading-[24px] font-semibold text-gray-900 px-6",
-              {
-                "text-sm leading-[24px] font-semibold text-gray-900 border-b-2 px-6 border-gray-900":
-                  link.name === activeLink,
-              }
-            )}
+            className={clsx("text-xl leading-[24px] text-gray-900 px-6 pb-1", {
+              "border-b-2 font-medium border-gray-900 pb-0":
+                link.name === activeLink,
+            })}
           >
             {link.name}
           </Link>
