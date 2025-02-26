@@ -53,7 +53,7 @@ export default function Navbar() {
             <span className=" sr-only">PLACEHOLDER</span>
           </div>
         </div>
-        <div className="flex sm:gap-x-12">
+        <div className="flex lg:gap-x-12">
           <NavLinks
             activeLink={activeLink}
             setActiveLink={setActiveLink}
