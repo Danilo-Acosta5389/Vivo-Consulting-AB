@@ -16,31 +16,39 @@ function References() {
   const clients = [
     {
       name: "Region Stockholm",
-      image: "/region-sthlm.png",
+      image: "/kunder/region-sthlm.png",
     },
     {
       name: "Region Stockholm",
-      image: "/region-sthlm.png",
+      image: "/kunder/Attendo.jpeg",
     },
     {
       name: "Region Stockholm",
-      image: "/region-sthlm.png",
+      image: "/kunder/big-care.png",
     },
     {
       name: "Region Stockholm",
-      image: "/region-sthlm.png",
+      image: "/kunder/dedicare.png",
     },
     {
       name: "Region Stockholm",
-      image: "/region-sthlm.png",
+      image: "/kunder/forenede.png",
     },
     {
       name: "Region Stockholm",
-      image: "/region-sthlm.png",
+      image: "/kunder/iocum.svg",
     },
     {
       name: "Region Stockholm",
-      image: "/region-sthlm.png",
+      image: "/kunder/silverhemmen.png",
+    },
+    {
+      name: "Region Stockholm",
+      image: "/kunder/sthlm-stad.png",
+    },
+    {
+      name: "Region Stockholm",
+      image: "/kunder/vardaga.png",
     },
   ];
   const reviews = [
