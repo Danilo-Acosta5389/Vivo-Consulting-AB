@@ -5,8 +5,8 @@ import NavlinkContextProvider from "../context/navlink-context";
 import ReCaptchaProvider from "@/context/recaptcha-provide";
 
 export const metadata: Metadata = {
-  title: "Vivo Consulting AB",
-  description: "Beskrivning av Vivo Consulting AB",
+  title: "Vivo Nurse Consulting",
+  description: "Vivo Nurse Consulting AB",
 };
 
 export default function RootLayout({
@@ -16,6 +16,23 @@ export default function RootLayout({
 }>) {
   return (
     <html className="bg-slate-100" lang="sv">
+      <head>
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon/favicon-96x96.png"
+          sizes="96x96"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/favicon/apple-touch-icon.png"
+        />
+        <meta name="apple-mobile-web-app-title" content="VivoNurse" />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
+      </head>
       <body id="home" className="w-full h-full flex flex-col bg-slate-100">
         <ReCaptchaProvider>
           <NavlinkContextProvider>{children}</NavlinkContextProvider>
