@@ -31,6 +31,9 @@ function Competence() {
     "OmsorgProd",
   ];
 
+  const qualities =
+    "Palliativa Register, Senior Alert, Beställningsportalen, BPSD registret,Vaccinera, Symfoni, Pascal,MCSS/Appva,LCP, NVP, NPÖ, Quinyx, Medvind WFM";
+
   return (
     <section className="max-w-7xl flex flex-col items-center justify-center bg-slate-100 py-10 pb-20">
       <div className=" flex flex-col items-center justify-center">
@@ -38,6 +41,7 @@ function Competence() {
           Kompetenser
         </p>
       </div>
+      <span className="self-start pl-8 text-2xl pb-3">Verktyg</span>
       <Carousel
         opts={{
           align: "start",
@@ -67,6 +71,44 @@ function Competence() {
               </div>
             </CarouselItem>
           ))}
+        </CarouselContent>
+        <CarouselNext className="hidden sm:flex p-5 relative right-3 top-7" />
+      </Carousel>
+      <span className="self-start pl-8 pt-10 pb-3 text-2xl">
+        Kvalitetsregister
+      </span>
+      <Carousel
+        opts={{
+          align: "start",
+        }}
+        plugins={[
+          Autoplay({
+            delay: 2000,
+          }),
+        ]}
+        className="w-full flex sm:space-x-6"
+      >
+        <CarouselPrevious className=" hidden sm:flex p-5 relative left-3 top-7 " />
+        <CarouselContent className="">
+          {qualities
+            .trim()
+            .split(",")
+            .map((name, index) => (
+              <CarouselItem
+                key={index}
+                className="max-w-fit md:basis-1/2 lg:basis-1/5 "
+              >
+                <div className="p-1">
+                  <Card className="bg-blue-950 rounded-2xl">
+                    <CardContent className=" p-2 px-4  text-white">
+                      <span className="text-xl font-semibold flex flex-col items-center justify-center whitespace-nowrap">
+                        {name}
+                      </span>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
         </CarouselContent>
         <CarouselNext className="hidden sm:flex p-5 relative right-3 top-7" />
       </Carousel>
