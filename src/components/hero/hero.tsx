@@ -20,7 +20,7 @@ function Hero() {
         height={428}
         src="/hero.png"
         alt="Image of healthcare people"
-        className=" max-w-fit min-h-fit"
+        className=" max-w-fit min-h-[428px]"
       />
       <div className=" w-fit px-4 z-10 absolute text-white text-center flex flex-col items-center justify-center font-normal">
         <h1 className=" sm:text-4xl text-3xl mb-5 z-20">
