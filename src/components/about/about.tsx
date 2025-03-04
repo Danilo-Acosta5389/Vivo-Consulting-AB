@@ -40,8 +40,8 @@ export default function About() {
           Varför välja oss?
         </p>
       </div>
-      <div className="flex lg:flex-row flex-col items-center justify-between lg:p-10 mb-5">
-        <div className="flex flex-col items-start justify-start max-w-md px-8">
+      <div className="flex lg:flex-row flex-col lg:items-start items-center justify-between lg:p-10 mb-5">
+        <div className="flex flex-col items-start justify-start max-w-[38rem] px-8">
           {sellingPoints.map((point, index) => (
             <div
               key={index}
@@ -55,14 +55,16 @@ export default function About() {
         {/* <div  className=" sr-only">
           ref
         </div> */}
-        <Image
-          ref={ref}
-          src="/nurses.jpeg"
-          alt="Image of nurses"
-          width={500}
-          height={500}
-          className="opacity-90 lg:my-0 my-10"
-        />
+        <div className="overflow-hidden ">
+          <Image
+            ref={ref}
+            src="/second.png"
+            alt="Image of nurses"
+            width={500}
+            height={500}
+            className="opacity-90 lg:my-0 my-10 -scale-x-100 lg:scale-125 px-6"
+          />
+        </div>
       </div>
       <Competence />
     </section>

@@ -168,7 +168,7 @@ export default function Contact() {
             type="number"
             id="number"
             name="number"
-            label="Nummer*"
+            label="Telefonnummer*"
             variant="outlined"
           />
           <CustomTextField
