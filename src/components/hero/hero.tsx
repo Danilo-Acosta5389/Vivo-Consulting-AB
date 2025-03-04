@@ -18,9 +18,9 @@ function Hero() {
       <Image
         width={1920}
         height={1080}
-        src="/hero2.jpg"
+        src="/hero.png"
         alt="Image of healthcare people"
-        className="max-w-fit opacity-70"
+        className="relative -right-20 sm:static max-w-fit"
       />
       <div className=" w-fit px-4 z-10 absolute text-white text-center flex flex-col items-center justify-center font-normal">
         <h1 className=" sm:text-4xl text-3xl mb-5 z-20">
