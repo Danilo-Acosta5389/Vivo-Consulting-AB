@@ -63,14 +63,29 @@ export default async function emailSender(dto: SendEmailDTO) {
       text: "Vi har mottagit ditt meddelande och återkommer så snart vi kan",
       html: `
       <body
-    style="max-width: 450px; width: full; min-height: 700px; padding-bottom: 20px; border: 20px solid rgb(233, 233, 233)"
+    style="background-color: rgb(248, 248, 248); max-width: 450px; width: full; min-height: 700px; padding-bottom: 20px;"
   >
+    <img src="https://dev-vivoconsulting.ddns.net/images/uploads/vivo-logo.png"
+     alt="Vivo Consulting Logo" 
+     width="200" 
+     height="61" 
+     style="display: block; margin: 0 auto; padding:20px"/>
     <div
       style="
-        margin: 10px;
+        width: 85%;
+        border: 1px solid rgb(219, 219, 219);
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+      "
+    ></div>
+    <div
+      style="
+        margin: 20px;
         display: block;
         font-family: helvetica;
         font-weight: bold;
+        color: rgb(7, 7, 7);
       "
     >
       <h3>Hej, ${dto.name}</h3>
@@ -82,7 +97,7 @@ export default async function emailSender(dto: SendEmailDTO) {
         >
       </p>
       <div style="margin-top: 2rem">
-        Title
+        <div style="margin-bottom:5px;">Angivna uppgifter</div>
         <div
           style="
             margin-top: 0.5rem;
