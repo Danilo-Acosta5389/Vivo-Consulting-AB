@@ -63,7 +63,7 @@ export default async function emailSender(dto: SendEmailDTO) {
       text: "Vi har mottagit ditt meddelande och återkommer så snart vi kan",
       html: `
       <body
-    style="background-color: rgb(248, 248, 248); max-width: 450px; width: full;"
+    style="background-color: rgb(248, 248, 248); max-width: 450px; width: full; padding-bottom:1px;"
   >
     <img src="https://dev-vivoconsulting.ddns.net/images/uploads/vivo-logo.png"
      alt="Vivo Consulting Logo" 
