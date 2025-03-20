@@ -6,7 +6,8 @@ import NavLinks from "./nav-links";
 import Links from "./types";
 import { useNavlinkContext } from "@/context/navlink-context";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import clsx from "clsx";
 
 const links: Links[] = [
   {
@@ -31,21 +32,21 @@ export default function Navbar() {
   const [hidden, setHidden] = useState(false);
 
   const { scrollY } = useScroll();
+
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
-    if (latest > previous && latest > 150 && window.innerWidth < 768) {
+    if (latest > previous && window.innerWidth < 768) {
       setHidden(true);
     } else {
       setHidden(false);
     }
-    //console.log(latest);
   });
 
   return (
     <motion.header
       variants={{
         visible: { y: 0 },
-        hidden: { y: "-46%" },
+        hidden: { y: "-40%" },
       }}
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -55,7 +56,15 @@ export default function Navbar() {
         aria-label="Global"
         className="mx-auto flex flex-col md:flex-row max-w-7xl w-full items-center justify-between md:p-6 lg:px-8 gap-y-2 py-4"
       >
-        <motion.div className="flex lg:flex-1">
+        <motion.div
+          variants={{
+            visible: { opacity: 1, y: 0 },
+            hidden: { opacity: 0, y: -10 },
+          }}
+          animate={hidden ? "hidden" : "visible"}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="flex lg:flex-1"
+        >
           <Link
             className="-m-1.5 p-1.5 pb-1"
             href="#home"
