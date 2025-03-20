@@ -137,20 +137,3 @@ export default async function emailSender(dto: SendEmailDTO) {
     };
   }
 }
-
-// Confirmation Email image - WIP
-// <img src="https://img.freepik.com/premium-vector/template-logo-design-trader-seller_1089435-23.jpg"
-//  alt="Vivo Consulting Logo"
-//  width="200"
-//  height="100"
-//  style="display: block; margin: 0 auto;"/>
-
-// <div
-//   style="
-//     width: 85%;
-//     border: 1px solid rgb(219, 219, 219);
-//     margin-right: auto;
-//     margin-left: auto;
-//     display: block;
-//   "
-// ></div>

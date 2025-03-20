@@ -1,10 +1,12 @@
 "use client";
 
+import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import Link from "next/link";
 import NavLinks from "./nav-links";
 import Links from "./types";
 import { useNavlinkContext } from "@/context/navlink-context";
 import Image from "next/image";
+import { useState } from "react";
 
 const links: Links[] = [
   {
@@ -26,12 +28,34 @@ const links: Links[] = [
 
 export default function Navbar() {
   const { activeLink, setActiveLink } = useNavlinkContext();
+  const [hidden, setHidden] = useState(false);
+
+  const { scrollY } = useScroll();
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() ?? 0;
+    if (latest > previous && latest > 150 && window.innerWidth < 768) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+    //console.log(latest);
+  });
 
   return (
-    <header className="bg-white border-b border-gray-300 min-h-[73px] sticky top-0 z-30 flex flex-col justify-center items-center ">
+    <motion.header
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: "-50%" },
+      }}
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      className="bg-white border-b border-gray-300 min-h-[73px] sticky top-0 z-30 flex flex-col justify-center items-center "
+    >
       <nav
         aria-label="Global"
-        className="mx-auto flex flex-col md:flex-row max-w-7xl w-full items-center justify-between sm:p-6 py-4 lg:px-8 gap-y-2"
+        className={`transition-all duration-300 ease-in-out mx-auto flex flex-col md:flex-row max-w-7xl w-full items-center justify-between md:p-6 ${
+          hidden ? "gap-y-4" : "py-4"
+        } lg:px-8 gap-y-2`}
       >
         <div className="flex lg:flex-1">
           <Link
@@ -66,6 +90,6 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-    </header>
+    </motion.header>
   );
 }
