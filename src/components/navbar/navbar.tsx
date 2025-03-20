@@ -6,8 +6,7 @@ import NavLinks from "./nav-links";
 import Links from "./types";
 import { useNavlinkContext } from "@/context/navlink-context";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import clsx from "clsx";
+import { useState } from "react";
 
 const links: Links[] = [
   {
