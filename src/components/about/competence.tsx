@@ -6,7 +6,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
 
 function Competence() {
   const skills = [
@@ -35,7 +34,7 @@ function Competence() {
     "Palliativa Register, Senior Alert, Beställningsportalen, BPSD registret,Vaccinera, Symfoni, Pascal,MCSS/Appva,LCP, NVP, NPÖ, Quinyx, Medvind WFM";
 
   return (
-    <section className="max-w-7xl flex flex-col items-center justify-center bg-slate-100 py-10 pb-20">
+    <section className="max-w-7xl w-full flex flex-col items-center justify-center bg-slate-100 py-10 pb-20">
       <div className=" flex flex-col items-center justify-center">
         <p className=" border border-black rounded-md p-2 px-4 mb-14 text-xl">
           Kompetenser
@@ -46,11 +45,11 @@ function Competence() {
         opts={{
           align: "start",
         }}
-        plugins={[
-          Autoplay({
-            delay: 2000,
-          }),
-        ]}
+        // plugins={[
+        //   Autoplay({
+        //     delay: 2000,
+        //   }),
+        // ]}
         className="w-full flex sm:space-x-6"
       >
         <CarouselPrevious className=" hidden sm:flex p-5 relative left-3 top-7 " />
@@ -81,11 +80,11 @@ function Competence() {
         opts={{
           align: "start",
         }}
-        plugins={[
-          Autoplay({
-            delay: 2000,
-          }),
-        ]}
+        // plugins={[
+        //   Autoplay({
+        //     delay: 2000,
+        //   }),
+        // ]}
         className="w-full flex sm:space-x-6"
       >
         <CarouselPrevious className=" hidden sm:flex p-5 relative left-3 top-7 " />

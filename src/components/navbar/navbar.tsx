@@ -74,7 +74,7 @@ export default function Navbar() {
               width={150}
               height={50}
               alt="Company logo"
-              className=" md:absolute md:top-4"
+              className=" md:absolute md:top-5"
             />
           </Link>
         </motion.div>

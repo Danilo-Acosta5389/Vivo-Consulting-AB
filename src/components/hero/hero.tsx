@@ -14,14 +14,17 @@ function Hero() {
     }
   }, [inView, setActiveLink]);
   return (
-    <section className=" overflow-hidden bg-slate-500 flex flex-col items-center justify-center relative min-h-[428px] h-full">
-      <Image
-        width={1440}
-        height={428}
-        src="/hero.png"
-        alt="Image of healthcare people"
-        className=" max-w-fit min-h-[428px] relative z-0 -right-28 sm:-right-0"
-      />
+    <section className="overflow-hidden bg-slate-500 flex flex-col items-center justify-center relative min-h-[428px] h-full">
+      <div className=" h-full w-full absolute z-0 right-[23rem] md:right-[12rem] lg:right-[5rem] xl:right-0">
+        <Image
+          fill
+          objectFit="cover"
+          layout="fill"
+          src="/hero.png"
+          alt="Image of healthcare people"
+          className=" h-full min-w-fit"
+        />
+      </div>
       <div className=" w-fit px-4 z-20 absolute text-white text-center flex flex-col items-center justify-center font-normal">
         <h1 className=" sm:text-4xl text-3xl mb-5 ">
           Trygg och flexibel bemanning inom vården

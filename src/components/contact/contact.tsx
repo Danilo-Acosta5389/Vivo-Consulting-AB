@@ -116,107 +116,109 @@ export default function Contact() {
   }, [inView, setActiveLink]);
 
   return (
-    <section className=" h-screen sm:h-full max-w-7xl bg-slate-100 py-8">
+    <section className=" flex flex-col items-center justify-center h-screen sm:h-full bg-slate-100 py-8">
       <div id="contact" className=" sr-only self-center relative -top-24"></div>
-      <div className="flex flex-col items-center justify-center px-10">
-        <p className=" self-start my-5 p-2 px-4 text-2xl">Kontakta oss</p>
-        <Form
-          ref={ref}
-          action={action}
-          className="self-start flex flex-col space-y-5 sm:max-w-80 w-full pb-10"
-        >
-          <CustomTextField
-            disabled={isPending}
-            defaultValue={state.inputs?.name}
-            error={
-              state.errors?.name !== undefined
-                ? state.success
-                  ? false
-                  : true
-                : false
-            }
-            helperText={state.errors?.name}
-            type="text"
-            id="name"
-            name="name"
-            label="Namn*"
-            className="border-black border-8"
-          />
-          <CustomTextField
-            disabled={isPending}
-            defaultValue={state.inputs?.email}
-            error={
-              state.errors?.email !== undefined
-                ? state.success
-                  ? false
-                  : true
-                : false
-            }
-            helperText={state.errors?.email}
-            id="email"
-            name="email"
-            label="E-post*"
-            variant="outlined"
-          />
-          <CustomTextField
-            disabled={isPending}
-            defaultValue={state?.inputs?.number}
-            error={
-              state.errors?.number ? (state.success ? false : true) : false
-            }
-            helperText={state.errors?.number}
-            type="number"
-            id="number"
-            name="number"
-            label="Telefonnummer*"
-            variant="outlined"
-          />
-          <CustomTextField
-            disabled={isPending}
-            defaultValue={state.inputs?.message}
-            error={
-              state.errors?.message !== undefined
-                ? state.success
-                  ? false
-                  : true
-                : false
-            }
-            helperText={state.errors?.message}
-            placeholder="Skriv ditt meddelande här"
-            multiline
-            rows={5}
-            type="text"
-            id="message"
-            name="message"
-            label="Meddelande*"
-            variant="outlined"
-          />
-          <div className="text-sm">
-            This site is protected by reCAPTCHA and the Google{" "}
-            <a
-              className=" underline text-blue-700"
-              href="https://policies.google.com/privacy"
-            >
-              Privacy Policy
-            </a>{" "}
-            and{" "}
-            <a
-              className=" underline text-blue-700"
-              href="https://policies.google.com/terms"
-            >
-              Terms of Service
-            </a>{" "}
-            apply.
-          </div>
-          <Button
-            type="submit"
-            size={"default"}
-            className=" text-xl bg-teal-600 hover:bg-teal-700 max-w-fit"
-            disabled={isPending}
+      <div className=" w-full max-w-7xl md:px-10">
+        <div className="flex flex-col items-center justify-center px-10">
+          <p className=" self-start my-5 p-2 px-4 text-2xl">Kontakta oss</p>
+          <Form
+            ref={ref}
+            action={action}
+            className="self-start flex flex-col space-y-5 sm:max-w-80 w-full pb-10"
           >
-            {isPending ? "Vänta" : "Skicka meddelande"}
-          </Button>
-        </Form>
+            <CustomTextField
+              disabled={isPending}
+              defaultValue={state.inputs?.name}
+              error={
+                state.errors?.name !== undefined
+                  ? state.success
+                    ? false
+                    : true
+                  : false
+              }
+              helperText={state.errors?.name}
+              type="text"
+              id="name"
+              name="name"
+              label="Namn*"
+              className="border-black border-8"
+            />
+            <CustomTextField
+              disabled={isPending}
+              defaultValue={state.inputs?.email}
+              error={
+                state.errors?.email !== undefined
+                  ? state.success
+                    ? false
+                    : true
+                  : false
+              }
+              helperText={state.errors?.email}
+              id="email"
+              name="email"
+              label="E-post*"
+              variant="outlined"
+            />
+            <CustomTextField
+              disabled={isPending}
+              defaultValue={state?.inputs?.number}
+              error={
+                state.errors?.number ? (state.success ? false : true) : false
+              }
+              helperText={state.errors?.number}
+              type="number"
+              id="number"
+              name="number"
+              label="Telefonnummer*"
+              variant="outlined"
+            />
+            <CustomTextField
+              disabled={isPending}
+              defaultValue={state.inputs?.message}
+              error={
+                state.errors?.message !== undefined
+                  ? state.success
+                    ? false
+                    : true
+                  : false
+              }
+              helperText={state.errors?.message}
+              placeholder="Skriv ditt meddelande här"
+              multiline
+              rows={5}
+              type="text"
+              id="message"
+              name="message"
+              label="Meddelande*"
+              variant="outlined"
+            />
+            <div className="text-sm">
+              This site is protected by reCAPTCHA and the Google{" "}
+              <a
+                className=" underline text-blue-700"
+                href="https://policies.google.com/privacy"
+              >
+                Privacy Policy
+              </a>{" "}
+              and{" "}
+              <a
+                className=" underline text-blue-700"
+                href="https://policies.google.com/terms"
+              >
+                Terms of Service
+              </a>{" "}
+              apply.
+            </div>
+            <Button
+              type="submit"
+              size={"default"}
+              className=" text-xl bg-teal-600 hover:bg-teal-700 max-w-fit"
+              disabled={isPending}
+            >
+              {isPending ? "Vänta" : "Skicka meddelande"}
+            </Button>
+          </Form>
+        </div>
       </div>
     </section>
   );

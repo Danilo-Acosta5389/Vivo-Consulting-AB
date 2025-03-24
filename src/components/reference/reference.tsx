@@ -81,7 +81,7 @@ function References() {
   }, [inView, setActiveLink]);
 
   return (
-    <section className=" max-w-7xl bg-slate-50 py-8">
+    <section className=" bg-slate-50 py-8">
       <div
         id="references"
         className=" sr-only self-center relative -top-24"
@@ -171,6 +171,7 @@ function References() {
           items={clients}
           direction="right"
           pauseOnHover={false}
+          sideGradientOn={false}
         />
       </div>
     </section>

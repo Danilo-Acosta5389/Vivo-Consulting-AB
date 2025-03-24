@@ -34,39 +34,41 @@ export default function About() {
 
   return (
     <section className="flex flex-col bg-slate-100">
-      <div id="about" className=" sr-only self-center relative -top-16"></div>
-      <div className=" flex flex-col items-center justify-center">
-        <p className=" border border-black rounded-md p-2 px-4 lg:my-8 mt-8 text-xl">
-          Varför välja oss?
-        </p>
-      </div>
-      <div className="flex lg:flex-row flex-col lg:items-start items-center justify-between lg:p-10 mb-5">
-        <div className="flex flex-col items-start justify-start max-w-[38rem] px-8">
-          {sellingPoints.map((point, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-start justify-start py-5"
-            >
-              <h2 className="text-2xl font-bold">{point.title}</h2>
-              <p className="text-lg">{point.description}</p>
-            </div>
-          ))}
+      <div className="flex flex-col items-center justify-center w-full max-w-7xl mx-auto">
+        <div id="about" className=" sr-only self-center relative -top-16"></div>
+        <div className=" flex flex-col items-center justify-center">
+          <p className=" border border-black rounded-md p-2 px-4 lg:my-8 mt-8 text-xl">
+            Varför välja oss?
+          </p>
         </div>
-        {/* <div  className=" sr-only">
+        <div className="flex lg:flex-row flex-col lg:items-start items-center justify-between lg:p-10 mb-5">
+          <div className="flex flex-col items-start justify-start max-w-[38rem] px-8">
+            {sellingPoints.map((point, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-start justify-start py-5"
+              >
+                <h2 className="text-2xl font-bold">{point.title}</h2>
+                <p className="text-lg">{point.description}</p>
+              </div>
+            ))}
+          </div>
+          {/* <div  className=" sr-only">
           ref
         </div> */}
-        <div className="overflow-hidden ">
-          <Image
-            ref={ref}
-            src="/second.png"
-            alt="Image of nurses"
-            width={500}
-            height={500}
-            className="opacity-90 lg:my-0 my-10 -scale-x-100 lg:scale-125 px-6"
-          />
+          <div className="overflow-hidden ">
+            <Image
+              ref={ref}
+              src="/second.png"
+              alt="Image of nurses"
+              width={500}
+              height={500}
+              className="opacity-90 lg:my-0 my-10 -scale-x-100 lg:scale-125 px-6"
+            />
+          </div>
         </div>
+        <Competence />
       </div>
-      <Competence />
     </section>
   );
 }

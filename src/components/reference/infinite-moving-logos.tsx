@@ -10,6 +10,7 @@ export const InfiniteMovingLogos = ({
   speed = "fast",
   pauseOnHover = true,
   className,
+  sideGradientOn = true,
 }: {
   items: {
     name: string;
@@ -19,6 +20,7 @@ export const InfiniteMovingLogos = ({
   speed?: "fast" | "normal" | "slow";
   pauseOnHover?: boolean;
   className?: string;
+  sideGradientOn?: boolean;
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
@@ -74,8 +76,10 @@ export const InfiniteMovingLogos = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-10  max-w-full  overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
-        className
+        "scroller relative z-10  max-w-full  overflow-hidden ",
+        className,
+        sideGradientOn &&
+          "[mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]"
       )}
     >
       <ul
