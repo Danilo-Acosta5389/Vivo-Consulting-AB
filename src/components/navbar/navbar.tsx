@@ -34,7 +34,7 @@ export default function Navbar() {
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
-    if (latest > previous && latest > 150 && window.innerWidth < 768) {
+    if (latest > previous && latest > 100 && window.innerWidth < 768) {
       setHidden(true);
     } else {
       setHidden(false);
@@ -49,7 +49,7 @@ export default function Navbar() {
       }}
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="bg-white border-b border-gray-300 min-h-[73px] sticky top-0 z-30 flex flex-col justify-center items-center "
+      className="bg-white border-b border-gray-300 sticky top-0 z-30 flex flex-col justify-center items-center "
     >
       <nav
         aria-label="Global"
