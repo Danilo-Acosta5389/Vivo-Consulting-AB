@@ -61,8 +61,8 @@ function Competence() {
             >
               <div className="p-1">
                 <Card className="bg-blue-950 rounded-2xl">
-                  <CardContent className=" p-2 px-4  text-white">
-                    <span className="text-xl font-semibold flex flex-col items-center justify-center whitespace-nowrap">
+                  <CardContent className=" p-2 px-4 text-white">
+                    <span className="text-xl flex flex-col items-center justify-center whitespace-nowrap">
                       {name}
                     </span>
                   </CardContent>
@@ -100,7 +100,7 @@ function Competence() {
                 <div className="p-1">
                   <Card className="bg-blue-950 rounded-2xl">
                     <CardContent className=" p-2 px-4  text-white">
-                      <span className="text-xl font-semibold flex flex-col items-center justify-center whitespace-nowrap">
+                      <span className="text-xl flex flex-col items-center justify-center whitespace-nowrap">
                         {name}
                       </span>
                     </CardContent>

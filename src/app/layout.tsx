@@ -3,11 +3,16 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import NavlinkContextProvider from "../context/navlink-context";
 import ReCaptchaProvider from "@/context/recaptcha-provide";
+import localFont from "next/font/local";
 
 export const metadata: Metadata = {
   title: "Vivo Nurse Consulting",
   description: "Vivo Nurse Consulting AB",
 };
+
+const satoshi = localFont({
+  src: "fonts/Satoshi-Regular.woff2",
+});
 
 export default function RootLayout({
   children,
@@ -33,7 +38,10 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="VivoNurse" />
         <link rel="manifest" href="/favicon/site.webmanifest" />
       </head>
-      <body id="home" className="w-full h-full flex flex-col bg-slate-100">
+      <body
+        id="home"
+        className={`w-full h-full flex flex-col bg-slate-100 ${satoshi.className} antialiased`}
+      >
         <ReCaptchaProvider>
           <NavlinkContextProvider>{children}</NavlinkContextProvider>
         </ReCaptchaProvider>
