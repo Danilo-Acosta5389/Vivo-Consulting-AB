@@ -91,7 +91,7 @@ function References() {
           Vad våra kunder tycker
         </p>
         <div
-          className={`px-4 lg:px-10 overflow-hidden flex flex-col max-w-[22rem] md:max-w-full items-start justify-evenly space-y-10 md:space-y-0 md:grid md:grid-cols-8 md:grid-rows-2 md:gap-x-20 md:gap-y-14 my-20 text-lg`}
+          className={`px-4 md:px-10 overflow-hidden flex flex-col max-w-[22rem] md:max-w-full items-start justify-evenly space-y-10 md:space-y-0 md:grid md:grid-cols-8 md:grid-rows-2 md:gap-x-20 xl:gap-x-28 md:gap-y-14 my-20 text-lg`}
         >
           <motion.div
             ref={ref}
@@ -120,7 +120,7 @@ function References() {
             // viewport={{ once: true }}
             className="md:col-span-4"
           >
-            <Card className="rounded-lg p-5 md:w-fit h-full md:h-[152px] flex flex-col justify-between bg-gradient-to-bl from-teal-400 to-teal-200 shadow-gray-200">
+            <Card className="rounded-lg p-5 md:w-fit h-full md:min-h-[152px] flex flex-col justify-between bg-gradient-to-bl from-teal-400 to-teal-200 shadow-gray-200">
               <CardContent className=" p-0 mb-5">
                 <BQM>{reviews[1].qoute}</BQM>
               </CardContent>
