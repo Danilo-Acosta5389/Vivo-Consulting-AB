@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const name = "no reply";
+const name = "Vivo Nurse";
 
 const sender: Mail.Address = {
   name: name,
@@ -41,11 +41,11 @@ export default async function emailSender(dto: SendEmailDTO) {
     await transporter.sendMail({
       from: sender,
       to: recipients,
-      subject: "Meddelande från webbsidan",
+      subject: "Meddelande från Vivo Nurse",
       text: dto.message,
       html: `
       <body style="">
-      <h3>Ett meddelande har skickats från Vivo Consultings hemsida</h3>
+      <h3>Ett meddelande har skickats från Vivo Nurse</h3>
       <h4>Personens uppgifter</h4>
       <p>Namn: ${dto.name}</p>
       <p>E-post: ${dto.email}</p>
@@ -108,20 +108,26 @@ export default async function emailSender(dto: SendEmailDTO) {
           "
         >
             <div style="margin-bottom: 0.5rem; line-height: 1.5rem;">
-              <span style="font-weight: bold">Namn:</span> <br />
+              <span style="font-weight: bold">Namn</span> <br />
               <span style="font-weight: lighter">${dto.name}</span>
             </div>
             <div style="margin-bottom: 0.5rem; line-height: 1.5rem;">
-              <span style="font-weight: bold">E-post:</span> <br />
+              <span style="font-weight: bold">E-post</span> <br />
               <span style="font-weight: lighter">${dto.email}</span>
             </div>
-            <div style="margin-bottom: 0.5rem; line-height: 1.5rem;">
-              <span style="font-weight: bold">Telefonnummer:</span> <br />
+            ${
+              dto.number && dto.number.length > 0
+                ? `<div style="margin-bottom: 0.5rem; line-height: 1.5rem;">
+              <span style="font-weight: bold">Telefonnummer</span> <br />
               <span style="font-weight: lighter">${dto.number}</span>
-            </div>
+            </div>`
+                : ""
+            }
             <div style="margin-bottom: 0.5rem;">
-              <div style="font-weight: bold; margin-bottom:5px;">Meddelande:</div>
-              <span style="font-weight: lighter; line-break:normal;">${dto.message}</div>
+              <div style="font-weight: bold; margin-bottom:5px;">Meddelande</div>
+              <span style="font-weight: lighter; line-break:normal;">${
+                dto.message
+              }</div>
             </div>
           </div>
         </div>

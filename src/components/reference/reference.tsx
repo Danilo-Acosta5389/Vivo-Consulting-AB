@@ -91,7 +91,7 @@ function References() {
           Vad våra kunder tycker
         </p>
         <div
-          className={`px-4 overflow-hidden flex flex-col max-w-[22rem] md:max-w-full items-start justify-evenly space-y-10 md:space-y-0 md:grid md:grid-cols-8 md:grid-rows-2 md:gap-x-20 md:gap-y-14 my-20 text-lg`}
+          className={`px-4 lg:px-10 overflow-hidden flex flex-col max-w-[22rem] md:max-w-full items-start justify-evenly space-y-10 md:space-y-0 md:grid md:grid-cols-8 md:grid-rows-2 md:gap-x-20 md:gap-y-14 my-20 text-lg`}
         >
           <motion.div
             ref={ref}
