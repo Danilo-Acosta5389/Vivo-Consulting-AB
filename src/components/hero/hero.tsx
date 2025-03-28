@@ -32,20 +32,20 @@ function Hero() {
           className=" md:hidden block"
         />
       </div>
-      <div className=" w-fit px-4 z-20 absolute text-white text-center flex flex-col items-center justify-center font-normal top-1/5 md:top-0 md:bottom-0">
-        <h1 className=" sm:text-4xl text-2xl font-medium sm:mb-5 mb-2">
+      <div className=" w-fit px-4 z-20 space-y-2 md:space-y-5 absolute text-white text-center flex flex-col items-center justify-center font-normal top-1/5 md:top-0 md:bottom-0">
+        <h1 className=" sm:text-4xl text-2xl font-medium">
           Trygg och flexibel bemanning inom vården
         </h1>
-        <p className="sm:text-xl text-sm font-light max-w-5xl sm:mb-5 mb-2">
+        <p className="sm:text-xl text-base leading-tight sm:leading-normal font-light max-w-5xl">
           Erfaren specialistsjuksköterska som erbjuder trygg och flexibel
           bemanning direkt till verksamheter eller via bemanningsföretag alltid
           med fokus på kontinuitet, kvalitet och patientens bästa
         </p>
-        <Link href={"#contact"} className=" scale-75 sm:scale-100">
+        <Link href={"#contact"} className="md:scale-125 pt-5">
           <Button
             ref={ref}
             size={"default"}
-            className=" text-xl font-normal p-4 py-6 bg-teal-700 hover:bg-teal-700"
+            className=" text-lg font-normal px-3 py-5 bg-teal-700 hover:bg-teal-700"
           >
             Kontakta oss
           </Button>
