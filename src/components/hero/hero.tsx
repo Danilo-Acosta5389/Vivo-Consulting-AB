@@ -14,7 +14,7 @@ function Hero() {
     }
   }, [inView, setActiveLink]);
   return (
-    <section className="overflow-hidden h-full w-full bg-slate-500 flex flex-col items-center justify-center relative">
+    <section className=" overflow-hidden h-full w-full bg-slate-500 flex flex-col items-center justify-center relative">
       <div className=" h-full w-full flex items-center justify-center min-h-[22rem] md:h-screen md:max-h-[35rem] md:min-h-[30rem] relative md:right-[30rem] lg:right-[20rem] xl:right-[10rem] 2xl:right-[0rem]">
         <Image
           fill
