@@ -11,6 +11,7 @@ import { useNavlinkContext } from "@/context/navlink-context";
 import { useInView } from "react-intersection-observer";
 import { styled } from "@mui/material/styles";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { ExclamationCircleIcon } from "@heroicons/react/24/solid";
 
 const CustomTextField = styled(TextField)({
   "& label.Mui-focused": {
@@ -20,14 +21,18 @@ const CustomTextField = styled(TextField)({
     borderBottomColor: "#B2BAC2",
   },
   "& .MuiOutlinedInput-root": {
+    borderRadius: "1px",
     "& fieldset": {
       borderColor: "#282829",
+      borderRadius: "1px",
     },
     "&:hover fieldset": {
       borderColor: "#B2BAC2",
+      borderRadius: "1px",
     },
     "&.Mui-focused fieldset": {
       borderColor: "#22262a",
+      borderRadius: "1px",
     },
   },
 });
@@ -136,12 +141,18 @@ export default function Contact() {
                     : true
                   : false
               }
-              helperText={state.errors?.name}
+              helperText={
+                state.errors?.name && (
+                  <span className="flex items-start relative -left-2 space-x-1 text-sm">
+                    <ExclamationCircleIcon width={20} height={20} color="red" />
+                    <span>{state.errors?.name}</span>
+                  </span>
+                )
+              }
               type="text"
               id="name"
               name="name"
               label="Namn*"
-              className="border-black border-8"
             />
             <CustomTextField
               disabled={isPending}
@@ -153,7 +164,14 @@ export default function Contact() {
                     : true
                   : false
               }
-              helperText={state.errors?.email}
+              helperText={
+                state.errors?.email && (
+                  <span className="flex items-start relative -left-2 space-x-1 text-sm">
+                    <ExclamationCircleIcon width={20} height={20} color="red" />
+                    <span>{state.errors?.email}</span>
+                  </span>
+                )
+              }
               id="email"
               name="email"
               label="E-post*"
@@ -165,11 +183,22 @@ export default function Contact() {
               error={
                 state.errors?.number ? (state.success ? false : true) : false
               }
-              helperText={state.errors?.number}
+              helperText={
+                state.errors?.number && (
+                  <span className="flex items-start relative -left-2 space-x-1 text-sm">
+                    <ExclamationCircleIcon width={20} height={20} color="red" />
+                    <span>{state.errors?.number}</span>
+                  </span>
+                )
+              }
               type="number"
               id="number"
               name="number"
-              label="Telefonnummer*"
+              label={
+                <span>
+                  Telefon <span className=" italic">(valfritt)</span>
+                </span>
+              }
               variant="outlined"
             />
             <CustomTextField
@@ -182,7 +211,14 @@ export default function Contact() {
                     : true
                   : false
               }
-              helperText={state.errors?.message}
+              helperText={
+                state.errors?.message && (
+                  <span className="flex items-start relative -left-2 space-x-1 text-sm">
+                    <ExclamationCircleIcon width={20} height={20} color="red" />
+                    <span>{state.errors?.message}</span>
+                  </span>
+                )
+              }
               placeholder="Skriv ditt meddelande här"
               multiline
               rows={5}
@@ -212,7 +248,7 @@ export default function Contact() {
             <Button
               type="submit"
               size={"default"}
-              className=" text-xl bg-teal-600 hover:bg-teal-700 max-w-fit"
+              className=" text-xl py-5 bg-teal-700 hover:bg-teal-800 max-w-fit"
               disabled={isPending}
             >
               {isPending ? "Vänta" : "Skicka meddelande"}

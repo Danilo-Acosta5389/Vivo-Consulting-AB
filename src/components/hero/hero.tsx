@@ -45,7 +45,7 @@ function Hero() {
           <Button
             ref={ref}
             size={"default"}
-            className=" text-lg font-normal px-3 py-5 bg-teal-700 hover:bg-teal-700"
+            className=" text-lg font-normal px-3 py-5 bg-teal-700 hover:bg-teal-800"
           >
             Kontakta oss
           </Button>
