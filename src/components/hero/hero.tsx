@@ -14,8 +14,8 @@ function Hero() {
     }
   }, [inView, setActiveLink]);
   return (
-    <section className="overflow-hidden bg-slate-500 flex flex-col items-center justify-center relative">
-      <div className=" h-full w-full flex items-center justify-center md:h-screen md:max-h-[35rem] md:min-h-[30rem] relative md:right-[30rem] lg:right-[20rem] xl:right-[10rem] 2xl:right-[0rem]">
+    <section className="overflow-hidden h-full w-full bg-slate-500 flex flex-col items-center justify-center relative">
+      <div className=" h-full w-full flex items-center justify-center min-h-[22rem] md:h-screen md:max-h-[35rem] md:min-h-[30rem] relative md:right-[30rem] lg:right-[20rem] xl:right-[10rem] 2xl:right-[0rem]">
         <Image
           fill
           objectFit="cover"
@@ -24,11 +24,12 @@ function Hero() {
           className=" h-full min-w-fit md:block hidden"
         />
         <Image
-          width={1000}
-          height={1000}
+          fill
+          objectFit="cover"
+          objectPosition="center"
           src="/hero-small.png"
           alt="Image of healthcare people"
-          className=" md:hidden block min-w-fit min-h-[20rem]"
+          className=" md:hidden block"
         />
       </div>
       <div className=" w-fit px-4 z-20 absolute text-white text-center flex flex-col items-center justify-center font-normal top-1/5 md:top-0 md:bottom-0">
