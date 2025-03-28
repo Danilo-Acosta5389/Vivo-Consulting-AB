@@ -28,11 +28,11 @@ function Hero() {
           height={1000}
           src="/hero-small.png"
           alt="Image of healthcare people"
-          className=" md:hidden block scale-110"
+          className=" md:hidden block min-w-fit min-h-[20rem]"
         />
       </div>
       <div className=" w-fit px-4 z-20 absolute text-white text-center flex flex-col items-center justify-center font-normal top-1/5 md:top-0 md:bottom-0">
-        <h1 className=" sm:text-4xl text-lg font-medium sm:mb-5 mb-2 whitespace-nowrap">
+        <h1 className=" sm:text-4xl text-2xl font-medium sm:mb-5 mb-2">
           Trygg och flexibel bemanning inom vården
         </h1>
         <p className="sm:text-xl text-sm font-light max-w-5xl sm:mb-5 mb-2">
@@ -50,7 +50,7 @@ function Hero() {
           </Button>
         </Link>
       </div>
-      <div className="h-full w-full absolute z-10 p-28 bg-gradient-to-t from-transparent via-slate-900 to-transparent blur-3xl opacity-90"></div>
+      <div className="h-full w-full absolute z-10 p-28 bg-gradient-to-t from-transparent via-slate-900 to-transparent blur-3xl opacity-80"></div>
     </section>
   );
 }
