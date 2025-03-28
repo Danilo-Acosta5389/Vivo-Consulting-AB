@@ -52,7 +52,10 @@ function Competence() {
         // ]}
         className="w-full flex sm:space-x-6"
       >
-        <CarouselPrevious className=" hidden sm:flex p-5 relative left-3 top-7 " />
+        <CarouselPrevious
+          className=" hidden sm:flex p-5 relative left-3 top-[1.7rem]"
+          variant={"ghost"}
+        />
         <CarouselContent className="">
           {skills.map((name, index) => (
             <CarouselItem
@@ -71,7 +74,10 @@ function Competence() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselNext className="hidden sm:flex p-5 relative right-3 top-7" />
+        <CarouselNext
+          className="hidden sm:flex p-5 relative right-3 top-[1.7rem]"
+          variant={"ghost"}
+        />
       </Carousel>
       <span className="self-start pl-8 pt-10 pb-3 text-2xl">
         Kvalitetsregister
@@ -87,7 +93,10 @@ function Competence() {
         // ]}
         className="w-full flex sm:space-x-6"
       >
-        <CarouselPrevious className=" hidden sm:flex p-5 relative left-3 top-7 " />
+        <CarouselPrevious
+          className=" hidden sm:flex p-5 relative left-3 top-[1.7rem] "
+          variant={"ghost"}
+        />
         <CarouselContent className="">
           {qualities
             .trim()
@@ -109,7 +118,10 @@ function Competence() {
               </CarouselItem>
             ))}
         </CarouselContent>
-        <CarouselNext className="hidden sm:flex p-5 relative right-3 top-7" />
+        <CarouselNext
+          className="hidden sm:flex p-5 relative right-3 top-[1.7rem]"
+          variant={"ghost"}
+        />
       </Carousel>
     </section>
   );
