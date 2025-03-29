@@ -24,19 +24,18 @@ export type SendEmailDTO = {
 };
 
 export const mailSchema = z.object({
-  name: z
-    .string({ message: "Var god ange namn" })
-    .min(1, "Var god ange namn")
-    .max(50, "Får vara högst 50 tecken"),
+  name: z.string().min(1, "Ange namn").max(50, "Får vara högst 50 tecken"),
   email: z
-    .string({ message: "Var god ange e-postadress" })
-    .email("Var god ange e-postadress")
-    .max(100, "Får inte vara längre än 100 tecken"),
+    .string()
+    .email({ message: "Ange giltig e-postadress" })
+    .min(1, "Ange e-postadress")
+    .max(100, "Får inte vara längre än 100 tecken")
+    .trim(),
   number: z
-    .string({ message: "Var god ange telefonnummer" })
+    .string({ message: "Ange telefonnummer" })
     .max(20, "Får inte vara längre än 20 tecken"),
   message: z
-    .string({ message: "Var god ange ett meddelande" })
-    .min(1, "Var god ange ett meddelande")
+    .string()
+    .min(1, "Ange ett meddelande")
     .max(300, "Får inte vara längre än 300 tecken"),
 });
