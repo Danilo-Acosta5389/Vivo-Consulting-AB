@@ -6,6 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+//import AutoScroll from "embla-carousel-auto-scroll";
 
 function Competence() {
   const skills = [
@@ -44,12 +45,9 @@ function Competence() {
       <Carousel
         opts={{
           align: "start",
+          dragFree: true,
         }}
-        // plugins={[
-        //   Autoplay({
-        //     delay: 2000,
-        //   }),
-        // ]}
+        // plugins={[AutoScroll({ speed: 1 })]}
         className="w-full flex sm:space-x-6"
       >
         <CarouselPrevious
@@ -85,12 +83,9 @@ function Competence() {
       <Carousel
         opts={{
           align: "start",
+          dragFree: true,
         }}
-        // plugins={[
-        //   Autoplay({
-        //     delay: 2000,
-        //   }),
-        // ]}
+        // plugins={[AutoScroll({ speed: 1, direction: "backward" })]}
         className="w-full flex sm:space-x-6"
       >
         <CarouselPrevious
