@@ -4,16 +4,53 @@ import {
   CardDescription,
   CardTitle,
 } from "@/components/ui/card";
-import { InfiniteMovingLogos } from "./infinite-moving-logos";
+//import { InfiniteMovingLogos } from "./infinite-moving-logos";
 import * as motion from "motion/react-client";
 import { useNavlinkContext } from "@/context/navlink-context";
 import { ReactNode, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import LogoCarousel from "./carousel-logos";
 
 function References() {
   const { ref, inView } = useInView();
   const { setActiveLink } = useNavlinkContext();
   const clients = [
+    {
+      name: "Region Stockholm",
+      image: "/kunder/region-sthlm.png",
+    },
+    {
+      name: "Region Stockholm",
+      image: "/kunder/Attendo.jpeg",
+    },
+    {
+      name: "Region Stockholm",
+      image: "/kunder/big-care.png",
+    },
+    {
+      name: "Region Stockholm",
+      image: "/kunder/dedicare.png",
+    },
+    {
+      name: "Region Stockholm",
+      image: "/kunder/forenede.png",
+    },
+    {
+      name: "Region Stockholm",
+      image: "/kunder/iocum.svg",
+    },
+    {
+      name: "Region Stockholm",
+      image: "/kunder/silverhemmen.png",
+    },
+    {
+      name: "Region Stockholm",
+      image: "/kunder/sthlm-stad.png",
+    },
+    {
+      name: "Region Stockholm",
+      image: "/kunder/vardaga.png",
+    },
     {
       name: "Region Stockholm",
       image: "/kunder/region-sthlm.png",
@@ -167,12 +204,13 @@ function References() {
             </Card>
           </motion.div>
         </div>
-        <InfiniteMovingLogos
+        {/* <InfiniteMovingLogos
           items={clients}
           direction="right"
           pauseOnHover={false}
           sideGradientOn={false}
-        />
+        /> */}
+        <LogoCarousel items={clients} />
       </div>
     </section>
   );
