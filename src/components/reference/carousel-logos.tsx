@@ -5,6 +5,7 @@ import {
 } from "@/components/ui/carousel";
 import AutoScroll from "embla-carousel-auto-scroll";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 function LogoCarousel({
   items,
@@ -14,6 +15,26 @@ function LogoCarousel({
     image: string;
   }[];
 }) {
+  const plugin = useRef(
+    AutoScroll({ speed: 1.4, direction: "backward", startDelay: 1 })
+  );
+  const elementRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClick = (event: MouseEvent) => {
+      // First try ref-based approach (recommended)
+      if (elementRef.current?.contains(event.target as Node)) {
+        plugin.current.stop();
+        return;
+      }
+
+      plugin.current.play();
+    };
+
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
+  }, []);
+
   return (
     <Carousel
       opts={{
@@ -21,7 +42,8 @@ function LogoCarousel({
         dragFree: true,
         loop: true,
       }}
-      plugins={[AutoScroll({ speed: 1.4, direction: "backward" })]}
+      ref={elementRef}
+      plugins={[plugin.current]}
       className="w-full flex sm:space-x-6"
     >
       <CarouselContent className=" flex items-center">
