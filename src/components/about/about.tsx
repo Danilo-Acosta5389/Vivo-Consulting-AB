@@ -3,6 +3,7 @@ import Competence from "./competence";
 import { useNavlinkContext } from "@/context/navlink-context";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+import CompetenceDesktop from "./competence-desktop";
 
 export default function About() {
   const { ref, inView } = useInView();
@@ -67,6 +68,7 @@ export default function About() {
             />
           </div>
         </div>
+        <CompetenceDesktop className="" />
         <Competence />
       </div>
     </section>
