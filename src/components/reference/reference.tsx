@@ -20,35 +20,27 @@ function References() {
       image: "/kunder/region-sthlm.png",
     },
     {
-      name: "Region Stockholm",
+      name: "Attendo",
       image: "/kunder/Attendo.jpeg",
     },
     {
-      name: "Region Stockholm",
-      image: "/kunder/big-care.png",
-    },
-    {
-      name: "Region Stockholm",
-      image: "/kunder/dedicare.png",
-    },
-    {
-      name: "Region Stockholm",
+      name: "Forenede",
       image: "/kunder/forenede.png",
     },
     {
-      name: "Region Stockholm",
+      name: "Iocum",
       image: "/kunder/iocum.svg",
     },
     {
-      name: "Region Stockholm",
+      name: "Silverhemmen",
       image: "/kunder/silverhemmen.png",
     },
     {
-      name: "Region Stockholm",
+      name: "Stockholm Stad",
       image: "/kunder/sthlm-stad.png",
     },
     {
-      name: "Region Stockholm",
+      name: "Vardaga",
       image: "/kunder/vardaga.png",
     },
     {
@@ -56,35 +48,27 @@ function References() {
       image: "/kunder/region-sthlm.png",
     },
     {
-      name: "Region Stockholm",
+      name: "Attendo",
       image: "/kunder/Attendo.jpeg",
     },
     {
-      name: "Region Stockholm",
-      image: "/kunder/big-care.png",
-    },
-    {
-      name: "Region Stockholm",
-      image: "/kunder/dedicare.png",
-    },
-    {
-      name: "Region Stockholm",
+      name: "Forenede",
       image: "/kunder/forenede.png",
     },
     {
-      name: "Region Stockholm",
+      name: "Iocum",
       image: "/kunder/iocum.svg",
     },
     {
-      name: "Region Stockholm",
+      name: "Silverhemmen",
       image: "/kunder/silverhemmen.png",
     },
     {
-      name: "Region Stockholm",
+      name: "Stockholm Stad",
       image: "/kunder/sthlm-stad.png",
     },
     {
-      name: "Region Stockholm",
+      name: "Vardaga",
       image: "/kunder/vardaga.png",
     },
   ];
