@@ -1,5 +1,5 @@
 "use server";
-//Hellooo there! This is a server action for sending emails from a contact form.
+
 import { z } from "zod";
 import {
   mailSchema,
