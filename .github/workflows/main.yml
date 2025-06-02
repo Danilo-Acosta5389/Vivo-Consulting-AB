@@ -1,29 +1,49 @@
 name: Deploy
-# Controls when the action will run.
+
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [main]
+    branches:
+      - main
+      - staging
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  deploy-staging:
+    if: github.ref == 'refs/heads/staging'
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Deploy using ssh
+      - name: Deploy to Staging using SSH
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          host: ${{ secrets.STAGING_HOST }}
+          username: ${{ secrets.STAGING_USERNAME }}
+          key: ${{ secrets.STAGING_SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.STAGING_SSH_PASSPHRASE }}
           port: 22
           script: |
-            cd /var/www//Vivo-Consulting-AB/
-            git pull origin main
+            cd /var/www/Vivo-Consulting-AB/
+            git pull origin staging
             git status
             sudo ./build.sh
+
+  deploy-production:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Production using SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USERNAME }}
+          key: ${{ secrets.PROD_SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.PROD_SSH_PASSPHRASE }}
+          port: 22
+          script: |
+            cd /var/www/Vivo-Consulting-AB/
+            git pull origin main
+            git status
+            cd /var/www/Vivo-Consulting-AB
+            /usr/local/bin/pnpm install
+            /usr/local/bin/pnpm run build
+            echo "Restarting vivo-con.service now"
+            sudo systemctl restart vivonurse.service
+            echo "Build script ended"
