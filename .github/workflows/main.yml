@@ -28,6 +28,8 @@ jobs:
             git reset --hard origin/staging
             git rev-parse --abbrev-ref HEAD
             git status
+            # Build the project
+            echo "Running build script"
             sudo ./build.sh
 
   deploy-production:
@@ -47,10 +49,12 @@ jobs:
             echo "Deploying to Production"
             cd /var/www/Vivo-Consulting-AB/
             git fetch origin
-            git checkout staging
-            git reset --hard origin/staging
+            git checkout main
+            git reset --hard origin/main
             git rev-parse --abbrev-ref HEAD
             git status
+            # Build the project
+            echo "Running build script"
             cd /var/www/Vivo-Consulting-AB
             /usr/local/bin/pnpm install
             /usr/local/bin/pnpm run build
