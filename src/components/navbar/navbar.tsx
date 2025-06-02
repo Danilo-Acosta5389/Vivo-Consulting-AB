@@ -1,4 +1,6 @@
 "use client";
+//
+// This file is a client component
 
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import Link from "next/link";
