@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to Staging using SSH
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v0.1.7
         with:
           host: ${{ secrets.STAGING_HOST }}
           username: ${{ secrets.STAGING_USERNAME }}
@@ -20,8 +20,13 @@ jobs:
           passphrase: ${{ secrets.STAGING_SSH_PASSPHRASE }}
           port: 22
           script: |
+            set -e
+            echo "Deploying to Staging"
             cd /var/www/Vivo-Consulting-AB/
-            git pull origin staging
+            git fetch origin
+            git checkout staging
+            git reset --hard origin/staging
+            git rev-parse --abbrev-ref HEAD
             git status
             sudo ./build.sh
 
@@ -30,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to Production using SSH
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v0.1.7
         with:
           host: ${{ secrets.PROD_HOST }}
           username: ${{ secrets.PROD_USERNAME }}
@@ -38,8 +43,13 @@ jobs:
           passphrase: ${{ secrets.PROD_SSH_PASSPHRASE }}
           port: 22
           script: |
+            set -e
+            echo "Deploying to Production"
             cd /var/www/Vivo-Consulting-AB/
-            git pull origin main
+            git fetch origin
+            git checkout staging
+            git reset --hard origin/staging
+            git rev-parse --abbrev-ref HEAD
             git status
             cd /var/www/Vivo-Consulting-AB
             /usr/local/bin/pnpm install
