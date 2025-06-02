@@ -1,21 +1,18 @@
 name: Deploy
-# Controls when the action will run.
+
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [main]
+    branches:
+      - main
+      - staging
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  deploy-staging:
+    if: github.ref_name == 'staging'
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Deploy using ssh
-        uses: appleboy/ssh-action@master
+      - name: Deploy to Staging using SSH
+        uses: appleboy/ssh-action@v0.1.7
         with:
           host: ${{ secrets.STAGING_HOST }}
           username: ${{ secrets.STAGING_USERNAME }}
@@ -23,8 +20,44 @@ jobs:
           passphrase: ${{ secrets.STAGING_SSH_PASSPHRASE }}
           port: 22
           script: |
+            set -e
+            echo "Deploying to Staging"
             cd /var/www/Vivo-Consulting-AB/
-            git pull origin main
+            git fetch origin
+            git checkout staging
+            git reset --hard origin/staging
+            git rev-parse --abbrev-ref HEAD
             git status
+            # Build the project
+            echo "Running build script"
             sudo ./build.sh
-            echo "eeecho"
+
+  deploy-production:
+    if: github.ref_name == 'main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Production using SSH
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USERNAME }}
+          key: ${{ secrets.PROD_SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.PROD_SSH_PASSPHRASE }}
+          port: 22
+          script: |
+            set -e
+            echo "Deploying to Production"
+            cd /var/www/Vivo-Consulting-AB/
+            git fetch origin
+            git checkout main
+            git reset --hard origin/main
+            git rev-parse --abbrev-ref HEAD
+            git status
+            # Build the project
+            echo "Running build script"
+            cd /var/www/Vivo-Consulting-AB
+            /usr/local/bin/pnpm install
+            /usr/local/bin/pnpm run build
+            echo "Restarting vivo-con.service now"
+            sudo systemctl restart vivonurse.service
+            echo "Build script ended"
