@@ -65,7 +65,7 @@ export default async function emailSender(dto: SendEmailDTO) {
       <body
     style="background-color: rgb(248, 248, 248); max-width: 450px; width: full; padding-bottom:1px;"
   >
-    <img src="https://dev-vivoconsulting.ddns.net/images/uploads/vivo-logo.png"
+    <img src="https://vivonurse.se/images/uploads/vivo-logo.png"
      alt="Vivo Consulting Logo" 
      width="200" 
      height="61" 
