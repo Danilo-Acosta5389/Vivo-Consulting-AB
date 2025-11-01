@@ -32,11 +32,11 @@ const recipients: Mail.Address[] = [
   },
   {
     name: name,
-    address: String(process.env.DESIGNER),
+    address: String(process.env.OWNER1),
   },
   {
     name: name,
-    address: String(process.env.OWNER),
+    address: String(process.env.OWNER2),
   },
 ];
 
