@@ -5,11 +5,16 @@ import nodemailer from "nodemailer";
 import Mail from "nodemailer/lib/mailer";
 
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.strato.com",
+  port: 465,
   secure: true,
   auth: {
     user: process.env.SMTP_USERNAME,
     pass: process.env.SMTP_PASSWORD,
+  },
+  tls: {
+    // do not fail on invalid certs
+    rejectUnauthorized: false,
   },
 });
 
@@ -27,11 +32,11 @@ const recipients: Mail.Address[] = [
   },
   {
     name: name,
-    address: String(process.env.DESIGNER),
+    address: String(process.env.OWNER1),
   },
   {
     name: name,
-    address: String(process.env.CLIENT),
+    address: String(process.env.OWNER2),
   },
 ];
 

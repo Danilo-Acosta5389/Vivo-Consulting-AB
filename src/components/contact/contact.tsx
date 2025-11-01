@@ -108,7 +108,13 @@ export default function Contact() {
       console.log("SUCCESSS");
       toast({
         title: "Tack!",
-        description: "Ditt meddelande har skickats",
+        description: (
+          <span>
+            Ett bekräftelse har skickats till din e-post.
+            <br />
+            Vänligen kontrollera skräpposten.
+          </span>
+        ),
       });
     }
   }, [state, toast]);
