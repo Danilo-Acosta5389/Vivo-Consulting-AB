@@ -18,18 +18,15 @@ function Hero() {
       <div className=" h-full w-full flex items-center justify-center min-h-[22rem] md:h-screen md:max-h-[35rem] md:min-h-[30rem] relative md:right-[30rem] lg:right-[20rem] xl:right-[10rem] 2xl:right-[0rem]">
         <Image
           fill
-          objectFit="cover"
           src="/hero.png"
           alt="Image of healthcare people"
-          className=" h-full min-w-fit md:block hidden"
+          className=" h-full min-w-fit md:block hidden object-cover object-center"
         />
         <Image
           fill
-          objectFit="cover"
-          objectPosition="center"
           src="/hero-small.png"
           alt="Image of healthcare people"
-          className=" md:hidden block"
+          className=" md:hidden block object-cover object-center"
         />
       </div>
       <div className=" w-fit px-4 z-20 space-y-2 md:space-y-5 absolute text-white text-center flex flex-col items-center justify-center font-normal top-1/5 md:top-0 md:bottom-0">
